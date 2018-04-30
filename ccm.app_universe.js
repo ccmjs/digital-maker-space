@@ -262,14 +262,14 @@
       data: { store: [ 'ccm.store', 'resources/datasets.js' ], key: {} },
       submit: [ "ccm.component", "https://ccmjs.github.io/akless-components/submit/versions/ccm.submit-2.1.0.min.js" ],
 
-      rating: [ "ccm.component",  "../../ccm-components/star_rating/versions/ccm.star_rating-1.0.0.js", {
+      rating: [ "ccm.component",  "https://ccmjs.github.io/tkless-components/star_rating/versions/ccm.star_rating-1.0.0.js", {
         star_title: [ "Gefällt mir gar nicht", "Gefällt mir nicht", "Ist Ok", "Gefällt mir", "Gefällt mir sehr" ],
         //user:  [ 'ccm.instance', 'https://ccmjs.github.io/akless-components/user/versions/ccm.user-4.0.1.min.js' ],
           data: {
             store: [ "ccm.store", { store: 'app_universe_components_ratings', url: 'http://localhost:8080' } ]
           }
       }],
-      rating_result: [ "ccm.component",  "../../ccm-components/star_rating_result/versions/ccm.star_rating_result-1.0.0.js", {
+      rating_result: [ "ccm.component",  "https://ccmjs.github.io/tkless-components/star_rating_result/versions/ccm.star_rating_result-1.0.0.js", {
         data: {
           store: [ "ccm.store", { store: 'app_universe_components_ratings', url: 'http://localhost:8080' } ]
         }
