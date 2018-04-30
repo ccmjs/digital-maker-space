@@ -1,0 +1,137 @@
+
+
+.navbar {
+  z-index: 99;
+  overflow: hidden;
+  background-color: #f3f3f3;
+  border: 1px solid #e7e7e7;
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+.navbar a:first-child {
+  float: left;
+  border-left: none;
+}
+
+.navbar a {
+  float: right;
+  border-left: 1px solid #bbb;
+  cursor: pointer;
+  color: #666;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+.navbar a:hover:not(.active) {
+  background-color: #ddd;
+}
+
+.navbar a.active {
+  color: white;
+  background-color: #4CAF50;
+}
+
+.logo {
+  font-family: "Abadi MT Condensed Extra Bold";
+  letter-spacing: 0.2em;
+  font-size: larger;
+}
+
+#content {
+  margin: 8em 0;
+}
+
+.flex {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 0.5em;
+}
+.entry {
+  width: 20em;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.entry:hover {
+  border: 1px solid rgba(153, 153, 153, 0.06);
+  border-radius: 0.5em;
+  background-color: rgba(153, 153, 153, 0.06);
+}
+
+.entry .title {
+  font-size: 16px;
+}
+
+.entry img {
+  width: 70px;
+}
+
+.entry .left {
+  padding: 1.2em;
+}
+
+.entry .glyphicon {
+  font-size: 3em;
+}
+
+.entry .developer {
+  font-family: Verdana;
+  font-size: 12px;
+  color: #999999;
+}
+
+.entry .rating {
+  font-size: 10px;
+}
+
+#component-view {
+  width: 100%;
+}
+
+#component-view .content {
+  padding-top: 5.5em;
+}
+
+#component-view .nav {
+  display: flex;
+  align-items: center;
+  padding-bottom: 5em;
+}
+
+#component-view .nav .right{
+  display: flex;
+  flex-direction: column;
+  padding-left: 2.5em;
+}
+
+#component-view .title {
+  font-size: 16px;
+}
+
+#component-view img {
+  width: 130px;
+}
+
+#footer {
+  display: grid;
+  grid-template-columns: auto;
+  background-color: #464646;
+  text-align: center;
+  color: #dddddd;
+  padding: 10px;
+  height: 300px;
+  border-top: 1px solid lightgray;
+}
+
+#footer #footer-text {
+  letter-spacing: 2px;
+  font-family: Verdana;
+  font-size: 16px;
+}
+#footer a {
+  color: white;
+}
