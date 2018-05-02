@@ -407,12 +407,11 @@
               create: function () {
                 console.log(data[ key ].versions[ 0 ].source);
                 my.crud_app.start( {
-                  "builder": [ "ccm.component", data[ key ].factories[ 0 ] ],
+                  root: self.element.querySelector( '.content' ),
+                  "builder": [ "ccm.component", data[ key ].factories[ 0 ].url, data[ key ].factories[ 0 ].config ],
                   "store": [ "ccm.store", { "store": "universe_"+ data[ key ].key, "url": "https://ccm2.inf.h-brs.de" } ],
                   "url": data[ key ].versions[ 0 ].source
-                } , function ( instance) {
-                  self.element.querySelector( '.content' ).appendChild( instance.root );
-                } )
+                } );
               }
             } );
 

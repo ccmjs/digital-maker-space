@@ -223,8 +223,8 @@ ccm.files[ "datasets.js" ] = {
     "versions": [
       {
         "version": "4.0.0",
-        "source": "https://ccmjs.github.io/akless-components/cloze/versions/beta/ccm.cloze-4.0.0.js",
-        "minified": "https://ccmjs.github.io/akless-components/cloze/versions/beta/ccm.cloze-4.0.0.min.js"
+        "source": "https://ccmjs.github.io/akless-components/cloze/versions/ccm.cloze-4.0.0.js",
+        "minified": "https://ccmjs.github.io/akless-components/cloze/versions/ccm.cloze-4.0.0.min.js"
       },
       {
         "version": "3.9.0",
@@ -244,13 +244,13 @@ ccm.files[ "datasets.js" ] = {
     ],
     "developer": "André Kless",
     "license": "The MIT License (MIT)",
-    "website": "https://github.com/akless/ccm-components/",
+    "website": "https://github.com/ccmjs/akless-components/",
     "demos": [
-      [ "ccm.get", "https://ccmjs.github.io/akless-components/cloze/resources/configs.min.js", "demo" ]
+      [ "ccm.get", "https://ccmjs.github.io/akless-components/cloze/resources/configs.js", "demo" ]
     ],
     "factories": [
       {
-        "url": "https://ccmjs.github.io/akless-components/cloze_builder/versions/ccm.cloze_builder-2.1.3.min.js",
+        "url": "https://ccmjs.github.io/akless-components/cloze_builder/versions/ccm.cloze_builder-2.1.3.js",
         "config": {}
       },
       {
