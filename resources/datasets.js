@@ -221,11 +221,11 @@ ccm.files[ "datasets.js" ] = {
     ],
     "description": "The component supports solution hints, visual feedback, point allocation, time limitation, different layouts, authentication procedures, customization of buttons and learning analysis.",
     "versions": [
-      /*{
+      {
         "version": "4.0.0",
         "source": "https://ccmjs.github.io/akless-components/cloze/versions/beta/ccm.cloze-4.0.0.js",
         "minified": "https://ccmjs.github.io/akless-components/cloze/versions/beta/ccm.cloze-4.0.0.min.js"
-      },*/
+      },
       {
         "version": "3.9.0",
         "source": "https://ccmjs.github.io/akless-components/cloze/versions/ccm.cloze-3.9.0.js",
@@ -250,7 +250,7 @@ ccm.files[ "datasets.js" ] = {
     ],
     "factories": [
       {
-        "url": "https://ccmjs.github.io/akless-components/cloze_builder/versions/ccm.cloze_builder-1.7.0.min.js",
+        "url": "https://ccmjs.github.io/akless-components/cloze_builder/versions/ccm.cloze_builder-2.1.3.min.js",
         "config": {}
       },
       {

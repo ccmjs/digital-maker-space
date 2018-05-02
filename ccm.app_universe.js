@@ -143,6 +143,13 @@
                       },
                       {
                         "tag": "button",
+                        "id": "create-btn",
+                        "class": "btn btn-success",
+                        "onclick": "%create%",
+                        "inner": "Create"
+                      },
+                      {
+                        "tag": "button",
                         "class": "btn btn-warning",
                         "onclick": "%edit_component%",
                         "inner": "Edit"
@@ -274,6 +281,7 @@
           store: [ "ccm.store", { store: 'app_universe_components_ratings', url: 'http://localhost:8080' } ]
         }
       }],
+      crud_app: [ "ccm.component",  "https://ccmjs.github.io/akless-components/crud_app/versions/ccm.crud_app-2.0.0.js" ],
       libs: [ 'ccm.load',
         { context: 'head', url: 'https://ccmjs.github.io/tkless-components/libs/bootstrap/css/font-face.css' },
         'https://ccmjs.github.io/tkless-components/libs/bootstrap/css/bootstrap.css',
@@ -335,18 +343,7 @@
             },
             new: function () {
               changeSelctedManueItem( this );
-              self.element.querySelector( '#content' ).classList.remove( 'flex' );
-              my.submit.start( {
-                "key": ["ccm.get", "resources/configs.js", "add_new_component" ],
-                "onfinish.callback": function ( instance, results ) {
-                  my.data.store.set( data[ data.length ] = results, () => {
-                    self.start();
-                  });
-                },
-                "onfinish.confirm": "Are you sure, you want to publish the Component?"
-              },  function ( instance ) {
-                self.element.querySelector( '#content' ).appendChild( instance.root );
-              } );
+              renderFormAddNewComponent();
             }
           } );
           renderListView();
@@ -381,9 +378,7 @@
             const comp_elem  = $.html( my.html.component, {
               title:  data[ key ].title,
               abstract:  data[ key ].abstract,
-              details: function(){
-                renderDetails( key );
-                },
+              details: function(){ renderDetails( key ); },
               demo: function () {
                 if (  !data[ key ].demos ) return;
 
@@ -408,6 +403,16 @@
                   },  function ( instance ) {
                   self.element.querySelector( '.content' ).appendChild( instance.root );
                 } );
+              },
+              create: function () {
+                console.log(data[ key ].versions[ 0 ].source);
+                my.crud_app.start( {
+                  "builder": [ "ccm.component", data[ key ].factories[ 0 ] ],
+                  "store": [ "ccm.store", { "store": "universe_"+ data[ key ].key, "url": "https://ccm2.inf.h-brs.de" } ],
+                  "url": data[ key ].versions[ 0 ].source
+                } , function ( instance) {
+                  self.element.querySelector( '.content' ).appendChild( instance.root );
+                } )
               }
             } );
 
@@ -434,6 +439,21 @@
             self.element.querySelector( '.content' ).innerHTML = '';
             self.element.querySelector( '.content' ).appendChild( detail_elem );
           }
+        }
+
+        function renderFormAddNewComponent() {
+          self.element.querySelector( '#content' ).classList.remove( 'flex' );
+          my.submit.start( {
+            "key": ["ccm.get", "resources/configs.js", "add_new_component" ],
+            "onfinish.callback": function ( instance, results ) {
+              my.data.store.set( data[ data.length ] = results, () => {
+                self.start();
+              });
+            },
+            "onfinish.confirm": "Are you sure, you want to publish the Component?"
+          },  function ( instance ) {
+            self.element.querySelector( '#content' ).appendChild( instance.root );
+          } );
         }
 
         function changeSelctedManueItem( item ) {
