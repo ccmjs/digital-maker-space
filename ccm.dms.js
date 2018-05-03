@@ -159,7 +159,7 @@
                         "id": "create-btn",
                         "class": "btn btn-success",
                         "onclick": "%create%",
-                        "inner": "Create"
+                        "inner": "Create App"
                       },
                       {
                         "tag": "button",
