@@ -1,40 +1,55 @@
 /**
- * @overview ccm component app universe
+ * @overview ccm component for digital maker space
  * @author Tea Kless <tea.kless@web.de>, 2018
+ * @author André Kless <andre.kless@web.de>, 2018
  * @license The MIT License (MIT)
  *
- * TODO select box for versions in details view
+ * TODO: select box for versions in details view
  */
-( function () {
 
+{
   var component = {
 
-    name: 'app_universe',
+    /**
+     * unique component name
+     * @type {string}
+     */
+    name: 'dms',
 
+    /**
+     * recommended used framework version
+     * @type {string}
+     */
     ccm: 'https://ccmjs.github.io/ccm/ccm.js',
 
+    /**
+     * default instance configuration
+     * @type {Object}
+     */
     config: {
       html: {
         "main": {
+          "id": "main",
           "inner": [
             {
               "id": "header",
-              "class": "navbar",
               "inner": [
                 {
-                  "tag": "a",
-                  "class": "logo",
-                  "onclick": "%all_components%",
-                  "inner": "AppUniverse"
+                  "id": "logo",
+                  "inner": {
+                    "tag": "span",
+                    "onclick": "%all_components%",
+                    "inner": "Digital Maker Space"
+                  }
                 },
                 {
-                  "tag": "a",
-                  "inner": "Sign On"
+                  "id": "publish",
+                  "inner": "Publish Component",
+                  "onclick": "%publish%"
                 },
                 {
-                  "tag": "a",
-                  "inner": "Add New",
-                  "onclick": "%new%"
+                  "id": "log_in",
+                  "inner": "Log In"
                 }
               ]
             },
@@ -45,9 +60,7 @@
               "id": "footer",
               "inner": [
                 {
-                  "tag": "p",
-                  "id": "footer-text",
-                  "inner": "Place for Publish, Create and Sharing of <a href='https://github.com/ccmjs'><i>ccm</i></a> Components !!!"
+                  "inner": "Place for Publish, Create and Sharing of <a href='https://github.com/ccmjs'><i>ccm</i></a> Components"
                 }
               ]
             }
@@ -275,12 +288,12 @@
           data: {
             store: [ "ccm.store", { store: 'app_universe_components_ratings', url: 'http://localhost:8080' } ]
           }
-      }],
+      } ],
       rating_result: [ "ccm.component",  "https://ccmjs.github.io/tkless-components/star_rating_result/versions/ccm.star_rating_result-1.0.0.js", {
         data: {
           store: [ "ccm.store", { store: 'app_universe_components_ratings', url: 'http://localhost:8080' } ]
         }
-      }],
+      } ],
       crud_app: [ "ccm.component",  "https://ccmjs.github.io/akless-components/crud_app/versions/ccm.crud_app-2.0.0.js" ],
       libs: [ 'ccm.load',
         { context: 'head', url: 'https://ccmjs.github.io/tkless-components/libs/bootstrap/css/font-face.css' },
@@ -289,9 +302,13 @@
       ]
      },
 
+    /**
+     * for creating instances out of this component
+     * @constructor
+     */
     Instance: function () {
+
       /**
-       *
        * own reference for inner functions
        * @type {Instance}
        */
@@ -299,7 +316,7 @@
 
       /**
        * privatized instance members
-       * @type {object}
+       * @type {Object}
        */
       let my;
 
@@ -309,8 +326,16 @@
        */
       let $;
 
+      /**
+       * dataset for rendering
+       * @type {Object}
+       */
       let data;
 
+      /**
+       * is called once after the initialization and is then deleted
+       * @param {function} callback - called after all synchronous and asynchronous operations are complete
+       */
       this.ready = callback => {
 
         // set shortcut to help functions
@@ -319,10 +344,10 @@
         // privatize all possible instance members
         my = $.privatize( self );
 
-        if ( self.logger ) self.logger.log( 'ready', my );
+        // has logger instance? => log 'ready' event
+        self.logger && self.logger.log( 'ready', $.clone( my ) );
 
         callback();
-
       };
 
       /**
@@ -331,138 +356,144 @@
        */
       this.start = callback => {
 
-        let main_elem;
+        // get dataset for rendering
+        $.dataset( my.data, dataset => { data = dataset;
 
-        $.dataset( my.data, function ( dataset ) {
-          data = dataset;
+          /**
+           * main HTML structure
+           * @type {Element}
+           */
+          const main_elem = $.html( my.html.main, {
 
-          main_elem = $.html( my.html.main, {
-            all_components: function() {
+            all_components: function () {
               changeSelctedManueItem( this );
               renderListView();
             },
-            new: function () {
+            publish: function () {
               changeSelctedManueItem( this );
               renderFormAddNewComponent();
             }
+
           } );
           renderListView();
 
           $.setContent( self.element, main_elem );
 
           callback && callback();
-        });
 
+          function renderListView() {
 
-        function renderListView() {
-
-          for( let key in data ) {
-            const entry = $.html( my.html.entry, {
-              title:  data[ key ].title,
-              developer: data[ key ].developer,
-              component: function ( ) {
-                changeSelctedManueItem( this );
-                renderComponentView( key );
-              }
-            } );
-            const content_elem = main_elem.querySelector( '#content' );
+            for( let key in data ) {
+              const entry = $.html( my.html.entry, {
+                title:  data[ key ].title,
+                developer: data[ key ].developer,
+                component: function ( ) {
+                  changeSelctedManueItem( this );
+                  renderComponentView( key );
+                }
+              } );
+              const content_elem = main_elem.querySelector( '#content' );
               content_elem.classList.add( 'flex' );
-            content_elem.appendChild( entry );
-            my.rating_result.start( { /*{ 'data.key': key },*/ }, function ( instance ) {
-              entry.querySelector( '.rating' ).appendChild( instance.root );
-            } );
-          }
-          
-          function renderComponentView( key ) {
+              content_elem.appendChild( entry );
+              my.rating_result.start( { /*{ 'data.key': key },*/ }, function ( instance ) {
+                entry.querySelector( '.rating' ).appendChild( instance.root );
+              } );
+            }
 
-            const comp_elem  = $.html( my.html.component, {
-              title:  data[ key ].title,
-              abstract:  data[ key ].abstract,
-              details: function(){ renderDetails( key ); },
-              demo: function () {
-                if (  !data[ key ].demos ) return;
+            function renderComponentView( key ) {
 
-                $.setContent( comp_elem.querySelector( '.content' ), '');
-                ccm.start( data[ key ].versions[0].minified ? data[ key ].versions[0].minified : data[ key ].versions[0].source, data[ key ].demos[0], function (instance) {
-                  self.element.querySelector( '.content' ).appendChild( instance.root );
-                } );
-              },
-              edit_component: function () {
-                $.setContent( comp_elem.querySelector( '.content' ), '');
+              const comp_elem  = $.html( my.html.component, {
+                title:  data[ key ].title,
+                abstract:  data[ key ].abstract,
+                details: function(){ renderDetails( key ); },
+                demo: function () {
+                  if (  !data[ key ].demos ) return;
 
-                self.element.querySelector( '#content' ).classList.remove( 'flex' );
-                my.submit.start( {
-                  "key": ["ccm.get", "resources/configs.js", "add_new_component"],
-                  "data": { store: my.data.store, key: data[ key ].key },
-                  "onfinish.callback": function ( instance, results ) {
-                    my.data.store.set( data[ data.length ] = results, () => {
-                      self.start();
-                    });
-                  },
-                  "onfinish.restart": true
+                  $.setContent( comp_elem.querySelector( '.content' ), '');
+                  ccm.start( data[ key ].versions[0].minified ? data[ key ].versions[0].minified : data[ key ].versions[0].source, data[ key ].demos[0], function (instance) {
+                    self.element.querySelector( '.content' ).appendChild( instance.root );
+                  } );
+                },
+                edit_component: function () {
+                  $.setContent( comp_elem.querySelector( '.content' ), '');
+
+                  self.element.querySelector( '#content' ).classList.remove( 'flex' );
+                  my.submit.start( {
+                    "key": ["ccm.get", "resources/configs.js", "add_new_component"],
+                    "data": { store: my.data.store, key: data[ key ].key },
+                    "onfinish.callback": function ( instance, results ) {
+                      my.data.store.set( data[ data.length ] = results, () => {
+                        self.start();
+                      });
+                    },
+                    "onfinish.restart": true
                   },  function ( instance ) {
-                  self.element.querySelector( '.content' ).appendChild( instance.root );
-                } );
+                    self.element.querySelector( '.content' ).appendChild( instance.root );
+                  } );
+                },
+                create: function () {
+                  console.log(data[ key ].versions[ 0 ].source);
+                  my.crud_app.start( {
+                    root: self.element.querySelector( '.content' ),
+                    "builder": [ "ccm.component", data[ key ].factories[ 0 ].url, data[ key ].factories[ 0 ].config ],
+                    "store": [ "ccm.store", { "store": "universe_"+ data[ key ].key, "url": "https://ccm2.inf.h-brs.de" } ],
+                    "url": data[ key ].versions[ 0 ].source
+                  } );
+                }
+              } );
+
+              // render star rating of component
+              my.rating.start( /*{ 'data.key': key },*/ function ( instance ) {
+                comp_elem.querySelector( '.rating' ).appendChild( instance.root );
+              } );
+
+              $.setContent( main_elem.querySelector( '#content' ), comp_elem );
+              renderDetails( key );
+              main_elem.querySelector( '#details-btn' ).classList.add( 'active' );
+            }
+
+            function renderDetails( key ) {
+              console.log( 'details' );
+              const detail_elem = $.html( my.html.details, {
+                comp_name: data[ key ].key,
+                versions: "1.0.0",
+                developer: data[ key ].developer,
+                licence: data[ key ].license,
+                website: data[ key ].website || ''
+              } );
+
+              self.element.querySelector( '.content' ).innerHTML = '';
+              self.element.querySelector( '.content' ).appendChild( detail_elem );
+            }
+          }
+
+          function renderFormAddNewComponent() {
+            self.element.querySelector( '#content' ).classList.remove( 'flex' );
+            my.submit.start( {
+              "key": ["ccm.get", "resources/configs.js", "add_new_component" ],
+              "onfinish.callback": function ( instance, results ) {
+                my.data.store.set( data[ data.length ] = results, () => {
+                  self.start();
+                });
               },
-              create: function () {
-                console.log(data[ key ].versions[ 0 ].source);
-                my.crud_app.start( {
-                  root: self.element.querySelector( '.content' ),
-                  "builder": [ "ccm.component", data[ key ].factories[ 0 ].url, data[ key ].factories[ 0 ].config ],
-                  "store": [ "ccm.store", { "store": "universe_"+ data[ key ].key, "url": "https://ccm2.inf.h-brs.de" } ],
-                  "url": data[ key ].versions[ 0 ].source
-                } );
-              }
+              "onfinish.confirm": "Are you sure, you want to publish the Component?"
+            },  function ( instance ) {
+              self.element.querySelector( '#content' ).appendChild( instance.root );
             } );
-
-            // render star rating of component
-            my.rating.start( /*{ 'data.key': key },*/ function ( instance ) {
-              comp_elem.querySelector( '.rating' ).appendChild( instance.root );
-            } );
-
-            $.setContent( main_elem.querySelector( '#content' ), comp_elem );
-            renderDetails( key );
-            main_elem.querySelector( '#details-btn' ).classList.add( 'active' );
           }
 
-          function renderDetails( key ) {
-            console.log( 'details' );
-            const detail_elem = $.html( my.html.details, {
-              comp_name: data[ key ].key,
-              versions: "1.0.0",
-              developer: data[ key ].developer,
-              licence: data[ key ].license,
-              website: data[ key ].website || ''
-            } );
-
-            self.element.querySelector( '.content' ).innerHTML = '';
-            self.element.querySelector( '.content' ).appendChild( detail_elem );
+          function changeSelctedManueItem( item ) {
+            [ ...self.element.querySelectorAll( 'a' )].map( a => { a.classList.remove( 'active' ); });
+            self.element.querySelector( '#content' ).innerHTML = '';
+            if( item ) item.classList.toggle( 'active' );
           }
-        }
 
-        function renderFormAddNewComponent() {
-          self.element.querySelector( '#content' ).classList.remove( 'flex' );
-          my.submit.start( {
-            "key": ["ccm.get", "resources/configs.js", "add_new_component" ],
-            "onfinish.callback": function ( instance, results ) {
-              my.data.store.set( data[ data.length ] = results, () => {
-                self.start();
-              });
-            },
-            "onfinish.confirm": "Are you sure, you want to publish the Component?"
-          },  function ( instance ) {
-            self.element.querySelector( '#content' ).appendChild( instance.root );
-          } );
-        }
+        } );
 
-        function changeSelctedManueItem( item ) {
-          [ ...self.element.querySelectorAll( 'a' )].map( a => { a.classList.remove( 'active' ); });
-          self.element.querySelector( '#content' ).innerHTML = '';
-          if( item ) item.classList.toggle( 'active' );
-        }
       };
     }
+
   };
 
-  function p(){window.ccm[v].component(component)}var f="ccm."+component.name+(component.version?"-"+component.version.join("."):"")+".js";if(window.ccm&&null===window.ccm.files[f])window.ccm.files[f]=component;else{var n=window.ccm&&window.ccm.components[component.name];n&&n.ccm&&(component.ccm=n.ccm),"string"==typeof component.ccm&&(component.ccm={url:component.ccm});var v=component.ccm.url.split("/").pop().split("-");if(v.length>1?(v=v[1].split("."),v.pop(),"min"===v[v.length-1]&&v.pop(),v=v.join(".")):v="latest",window.ccm&&window.ccm[v])p();else{var e=document.createElement("script");document.head.appendChild(e),component.ccm.integrity&&e.setAttribute("integrity",component.ccm.integrity),component.ccm.crossorigin&&e.setAttribute("crossorigin",component.ccm.crossorigin),e.onload=function(){p(),document.head.removeChild(e)},e.src=component.ccm.url}}
-}() );
+  function p(){window.ccm[v].component(component)}const f="ccm."+component.name+(component.version?"-"+component.version.join("."):"")+".js";if(window.ccm&&null===window.ccm.files[f])window.ccm.files[f]=component;else{const n=window.ccm&&window.ccm.components[component.name];n&&n.ccm&&(component.ccm=n.ccm),"string"==typeof component.ccm&&(component.ccm={url:component.ccm});var v=component.ccm.url.split("/").pop().split("-");if(v.length>1?(v=v[1].split("."),v.pop(),"min"===v[v.length-1]&&v.pop(),v=v.join(".")):v="latest",window.ccm&&window.ccm[v])p();else{const e=document.createElement("script");document.head.appendChild(e),component.ccm.integrity&&e.setAttribute("integrity",component.ccm.integrity),component.ccm.crossorigin&&e.setAttribute("crossorigin",component.ccm.crossorigin),e.onload=function(){p(),document.head.removeChild(e)},e.src=component.ccm.url}}
+}

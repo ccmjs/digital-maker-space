@@ -1,46 +1,85 @@
+/**
+ * @overview default layout of ccm component for digital maker space
+ * @author Tea Kless <tea.kless@web.de.de> 2018
+ * @author André Kless <andre.kless@web.de.de> 2018
+ * @license The MIT License (MIT)
+ */
 
-
-.navbar {
-  z-index: 99;
-  overflow: hidden;
-  background-color: #f3f3f3;
+#main {
+  display: flex;
+  flex-direction: column;
   border: 1px solid #e7e7e7;
+}
+
+#header {
+  z-index: 99;
+  background-color: #f3f3f3;
+  border-bottom: 1px solid #e7e7e7;
   position: fixed;
   top: 0;
   width: 100%;
+  height: 4em;
+  display: flex;
+  align-items: center;
 }
 
-.navbar a:first-child {
-  float: left;
-  border-left: none;
+#header > div {
+  white-space: nowrap;
+  padding: 0.8em;
 }
 
-.navbar a {
-  float: right;
-  border-left: 1px solid #bbb;
+#logo {
+  font-family: "Abadi MT Condensed Extra Bold", sans-serif;
+  letter-spacing: 0.2em;
+  font-size: large;
+  width: 100%;
+}
+
+#logo > span {
   cursor: pointer;
+}
+
+#header > div:not(:first-child) {
+  border-left: 1px solid #bbb;
   color: #666;
-  padding: 14px 16px;
-  text-decoration: none;
+  cursor: pointer;
 }
 
-.navbar a:hover:not(.active) {
-  background-color: #ddd;
-}
-
-.navbar a.active {
+#header > div:not(:first-child).active {
   color: white;
   background-color: #4CAF50;
 }
 
-.logo {
-  font-family: "Abadi MT Condensed Extra Bold";
-  letter-spacing: 0.2em;
-  font-size: larger;
+#header > div:not(:first-child):hover:not(.active) {
+  background-color: #ddd;
 }
 
 #content {
-  margin: 8em 0;
+  margin-top: 4em;
+  flex-grow: 1;
+  padding: 4em 0;
+}
+
+#footer {
+  display: grid;
+  grid-template-columns: auto;
+  background-color: #464646;
+  justify-content: center;
+  align-content: center;
+  color: #dddddd;
+  height: 4em;
+  border-top: 1px solid #e7e7e7;
+}
+
+#footer > div {
+  letter-spacing: 2px;
+  font-family: Verdana;
+  font-size: large;
+  padding: 0.5em;
+}
+
+#footer a {
+  color: white;
 }
 
 .flex {
@@ -114,24 +153,4 @@
 
 #component-view img {
   width: 130px;
-}
-
-#footer {
-  display: grid;
-  grid-template-columns: auto;
-  background-color: #464646;
-  text-align: center;
-  color: #dddddd;
-  padding: 10px;
-  height: 300px;
-  border-top: 1px solid lightgray;
-}
-
-#footer #footer-text {
-  letter-spacing: 2px;
-  font-family: Verdana;
-  font-size: 16px;
-}
-#footer a {
-  color: white;
 }
