@@ -396,6 +396,9 @@
           /** renders all components */
           function renderAllComponents() {
 
+            // view with all components already active? => abort
+            if ( content_elem.querySelector( '#all_components' ) ) return;
+
             // clear content area
             $.setContent( content_elem, $.html( { id: 'all_components' } ) );
 
@@ -498,11 +501,21 @@
           /** renders publish form */
           function renderPublishForm() {
 
+            // view with all components already active? => abort
+            if ( content_elem.querySelector( '#publish_form' ) ) return;
+
+            // clear content area
+            $.setContent( content_elem, $.html( { id: 'publish_form' } ) );
+
+            /**
+             * contains publish form
+             * @type {Element}
+             */
+            const publish_form_elem = content_elem.querySelector( '#publish_form' );
+
             my.submit.start( {
-              root: content_elem,
+              root: publish_form_elem,
               key: [ 'ccm.get', 'resources/configs.js', 'publish_form' ],
-              'onfinish.store': { settings: 'resources/datasets.js' },
-              'onfinish.confirm': 'Are you sure, you want to publish the Component?',
               onfinish: ( instance, component_dataset ) => {
 
                 /**
