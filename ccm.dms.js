@@ -489,12 +489,35 @@
               'onfinish.store': { settings: 'resources/datasets.js' },
               'onfinish.confirm': 'Are you sure, you want to publish the Component?',
               onfinish: ( instance, component_dataset ) => {
-                if ( !window.confirm( 'Are you sure, you want to publish the Component?' ) ) return;
-                let version = $.getIndex( component_dataset.url ).split( '-' );
+
+                /**
+                 * component version number
+                 * @type {string[]}
+                 */
+                const version = $.getIndex( component_dataset.url ).split( '-' );
+
+                /**
+                 * unique component name
+                 * @type {string}
+                 */
                 const name = version.shift();
+
+                // add name and version number in component dataset
                 component_dataset.key = name;
                 component_dataset.version = version;
-                my.data.store.set( component_dataset, () => { alert( 'Saved!' ); self.start(); } );
+
+                // check if unique component name already exists
+                if ( my.data.store.get( name, dataset => {
+                  if ( dataset ) return alert( 'Component with unique name "' + name + '" already exists.' );
+
+                  // make sure that the developer really wants to publish
+                  if ( !window.confirm( 'Are you sure, you want to publish the Component?' ) ) return;
+
+                  // save component dataset
+                  my.data.store.set( component_dataset, () => { alert( 'Saved!' ); self.start(); } );
+
+                } ) )
+
                 return false;
               }
             }, instance => {
