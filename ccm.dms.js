@@ -27,7 +27,7 @@
      * @type {Object}
      */
     config: {
-      html: {
+      "html": {
         "main": {
           "id": "main",
           "inner": [
@@ -41,6 +41,11 @@
                     "onclick": "%all_components%",
                     "inner": "Digital Maker Space"
                   }
+                },
+                {
+                  "id": "all_components",
+                  "inner": "All Components",
+                  "onclick": "%all_components%"
                 },
                 {
                   "id": "publish",
@@ -58,11 +63,9 @@
             },
             {
               "id": "footer",
-              "inner": [
-                {
-                  "inner": "Place for Publish, Create and Sharing of <a href='https://github.com/ccmjs'><i>ccm</i></a> Components"
-                }
-              ]
+              "inner": {
+                "inner": "Place for Publish, Create and Sharing of <a href='https://github.com/ccmjs'><i>ccm</i></a> Components"
+              }
             }
           ]
         },
@@ -279,8 +282,9 @@
           ]
         }
       },
-      data: { store: [ 'ccm.store', 'resources/datasets.js' ], key: {} },
-      submit: [ "ccm.component", "https://ccmjs.github.io/akless-components/submit/versions/ccm.submit-2.1.0.min.js" ],
+      "data": { "store": [ "ccm.store", "resources/datasets.js" ], "key": {} },
+      "submit": [ "ccm.component", "https://ccmjs.github.io/akless-components/submit/versions/ccm.submit-3.1.0.js" ],
+      "configs": [ "ccm.store", "resources/configs.js" ],
 
       rating: [ "ccm.component",  "https://ccmjs.github.io/tkless-components/star_rating/versions/ccm.star_rating-1.0.0.js", {
         star_title: [ "Gefällt mir gar nicht", "Gefällt mir nicht", "Ist Ok", "Gefällt mir", "Gefällt mir sehr" ],
@@ -327,10 +331,10 @@
       let $;
 
       /**
-       * dataset for rendering
-       * @type {Object}
+       * component datasets
+       * @type {Object[]}
        */
-      let data;
+      let components;
 
       /**
        * is called once after the initialization and is then deleted
@@ -356,39 +360,48 @@
        */
       this.start = callback => {
 
-        // get dataset for rendering
-        $.dataset( my.data, dataset => { data = dataset;
+        // get component datasets
+        $.dataset( my.data, datasets => { components = datasets;
 
           /**
            * main HTML structure
            * @type {Element}
            */
           const main_elem = $.html( my.html.main, {
-
             all_components: function () {
-              changeSelctedManueItem( this );
-              renderListView();
+              changeSelectedMenuEntry( this );
+              renderAllComponents();
             },
             publish: function () {
-              changeSelctedManueItem( this );
-              renderFormAddNewComponent();
+              changeSelectedMenuEntry( this );
+              renderPublishForm();
             }
-
           } );
-          renderListView();
 
+          /**
+           * content area
+           * @type {Element}
+           */
+          const content_elem = main_elem.querySelector( '#content' );
+
+          // render all components
+          renderAllComponents();
+
+          // bring prepared own content into frontend
           $.setContent( self.element, main_elem );
 
           callback && callback();
 
-          function renderListView() {
+          /** renders all components */
+          function renderAllComponents() {
+            main_elem.querySelector( '#content' ).innerHTML = '';
 
-            for( let key in data ) {
+            for( let key in components ) {
               const entry = $.html( my.html.entry, {
-                title:  data[ key ].title,
-                developer: data[ key ].developer,
+                title:  components[ key ].title,
+                developer: components[ key ].developer,
                 component: function ( ) {
-                  changeSelctedManueItem( this );
+                  changeSelectedMenuEntry( this );
                   renderComponentView( key );
                 }
               } );
@@ -403,14 +416,14 @@
             function renderComponentView( key ) {
 
               const comp_elem  = $.html( my.html.component, {
-                title:  data[ key ].title,
-                abstract:  data[ key ].abstract,
+                title:  components[ key ].title,
+                abstract:  components[ key ].abstract,
                 details: function(){ renderDetails( key ); },
                 demo: function () {
-                  if (  !data[ key ].demos ) return;
+                  if (  !components[ key ].demos ) return;
 
                   $.setContent( comp_elem.querySelector( '.content' ), '');
-                  ccm.start( data[ key ].versions[0].minified ? data[ key ].versions[0].minified : data[ key ].versions[0].source, data[ key ].demos[0], function (instance) {
+                  ccm.start( components[ key ].versions[0].minified ? components[ key ].versions[0].minified : components[ key ].versions[0].source, components[ key ].demos[0], function (instance) {
                     self.element.querySelector( '.content' ).appendChild( instance.root );
                   } );
                 },
@@ -420,9 +433,9 @@
                   self.element.querySelector( '#content' ).classList.remove( 'flex' );
                   my.submit.start( {
                     "key": ["ccm.get", "resources/configs.js", "add_new_component"],
-                    "data": { store: my.data.store, key: data[ key ].key },
+                    "data": { store: my.data.store, key: components[ key ].key },
                     "onfinish.callback": function ( instance, results ) {
-                      my.data.store.set( data[ data.length ] = results, () => {
+                      my.data.store.set( components[ components.length ] = results, () => {
                         self.start();
                       });
                     },
@@ -432,12 +445,12 @@
                   } );
                 },
                 create: function () {
-                  console.log(data[ key ].versions[ 0 ].source);
+                  console.log(components[ key ].versions[ 0 ].source);
                   my.crud_app.start( {
                     root: self.element.querySelector( '.content' ),
-                    "builder": [ "ccm.component", data[ key ].factories[ 0 ].url, data[ key ].factories[ 0 ].config ],
-                    "store": [ "ccm.store", { "store": "universe_"+ data[ key ].key, "url": "https://ccm2.inf.h-brs.de" } ],
-                    "url": data[ key ].versions[ 0 ].source
+                    "builder": [ "ccm.component", components[ key ].factories[ 0 ].url, components[ key ].factories[ 0 ].config ],
+                    "store": [ "ccm.store", { "store": "universe_"+ components[ key ].key, "url": "https://ccm2.inf.h-brs.de" } ],
+                    "url": components[ key ].versions[ 0 ].source
                   } );
                 }
               } );
@@ -455,11 +468,11 @@
             function renderDetails( key ) {
               console.log( 'details' );
               const detail_elem = $.html( my.html.details, {
-                comp_name: data[ key ].key,
+                comp_name: components[ key ].key,
                 versions: "1.0.0",
-                developer: data[ key ].developer,
-                licence: data[ key ].license,
-                website: data[ key ].website || ''
+                developer: components[ key ].developer,
+                licence: components[ key ].license,
+                website: components[ key ].website || ''
               } );
 
               self.element.querySelector( '.content' ).innerHTML = '';
@@ -467,25 +480,49 @@
             }
           }
 
-          function renderFormAddNewComponent() {
-            self.element.querySelector( '#content' ).classList.remove( 'flex' );
+          /** renders publish form */
+          function renderPublishForm() {
+
             my.submit.start( {
-              "key": ["ccm.get", "resources/configs.js", "add_new_component" ],
-              "onfinish.callback": function ( instance, results ) {
-                my.data.store.set( data[ data.length ] = results, () => {
-                  self.start();
-                });
-              },
-              "onfinish.confirm": "Are you sure, you want to publish the Component?"
-            },  function ( instance ) {
-              self.element.querySelector( '#content' ).appendChild( instance.root );
+              root: content_elem,
+              key: [ 'ccm.get', 'resources/configs.js', 'publish_form' ],
+              'onfinish.store': { settings: 'resources/datasets.js' },
+              'onfinish.confirm': 'Are you sure, you want to publish the Component?',
+              onfinish: ( instance, component_dataset ) => {
+                if ( !window.confirm( 'Are you sure, you want to publish the Component?' ) ) return;
+                let version = $.getIndex( component_dataset.url ).split( '-' );
+                const name = version.shift();
+                component_dataset.key = name;
+                component_dataset.version = version;
+                my.data.store.set( component_dataset, () => { alert( 'Saved!' ); self.start(); } );
+                return false;
+              }
+            }, instance => {
+
+              // set click events for help icons
+              [ ...instance.element.querySelectorAll( '.help' ) ].map( help => help.addEventListener( 'click', function () {
+
+                // show help text and hide other help texts
+                const this_a = this;
+                [ ...instance.element.querySelectorAll( '.help' ) ].map( other_a => other_a !== this_a && other_a.classList.remove( 'active' ) );
+                this.classList.toggle( 'active' );
+
+                // has logger instance? => log 'help' event
+                self.logger && self.logger.log( 'help', { form: 'publish_component', name: this.id.split( '-' )[ 0 ], active: this.classList.contains( 'active' ) } );
+
+              } ) );
+
             } );
+
           }
 
-          function changeSelctedManueItem( item ) {
-            [ ...self.element.querySelectorAll( 'a' )].map( a => { a.classList.remove( 'active' ); });
-            self.element.querySelector( '#content' ).innerHTML = '';
-            if( item ) item.classList.toggle( 'active' );
+          /**
+           * changes the selected header menu entry
+           * @param {Element} item - clicked header button
+           */
+          function changeSelectedMenuEntry( item ) {
+            [ ...main_elem.querySelectorAll( '#header > div' ) ].map( div => { div.classList.remove( 'active' ); } );
+            item.classList.add( 'active' );
           }
 
         } );
