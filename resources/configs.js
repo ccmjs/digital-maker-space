@@ -283,7 +283,9 @@ ccm.files[ 'configs.js' ] = {
               "type": "text",
               "id": "licence-input",
               "class": "form-control",
+              "name": "licence",
               "value": "MIT Licence",
+              "pattern": "MIT Licence",
               "disabled": true,
               "required": true
             }

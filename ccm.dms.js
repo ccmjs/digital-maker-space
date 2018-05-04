@@ -471,7 +471,7 @@
                 comp_name: components[ key ].key,
                 versions: "1.0.0",
                 developer: components[ key ].developer,
-                licence: components[ key ].license,
+                licence: components[ key ].licence,
                 website: components[ key ].website || ''
               } );
 
@@ -505,6 +505,7 @@
                 // add name and version number in component dataset
                 component_dataset.key = name;
                 component_dataset.version = version;
+                component_dataset.licence = 'MIT Licence';
 
                 // check if unique component name already exists
                 if ( my.data.store.get( name, dataset => {
