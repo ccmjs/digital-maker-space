@@ -5,6 +5,9 @@
  * @license The MIT License (MIT)
  *
  * TODO: select box for versions in details view
+ * TODO: lexicographical order of components (title and developer)
+ * TODO: check if component with same title and developer already exists
+ * TODO: layout of star rating results (brackets for total count and no fixed with)
  */
 
 {
@@ -71,18 +74,16 @@
         },
         "entry": {
           "class": "entry",
-          "onclick": "%component%",
+          "onclick": "%click%",
           "inner": [
             {
               "class": "left",
               "inner": {
                 "tag": "img",
-                "src": "resources/img/component.png",
-                //"class": "glyphicon glyphicon-paperclip"
+                "src": "resources/img/component.png"
               }
             },
             {
-              "tag": "div",
               "class": "right",
               "inner": [
                 {
@@ -285,6 +286,11 @@
       "data": { "store": [ "ccm.store", "resources/datasets.js" ], "key": {} },
       "submit": [ "ccm.component", "https://ccmjs.github.io/akless-components/submit/versions/ccm.submit-3.1.0.js" ],
       "configs": [ "ccm.store", "resources/configs.js" ],
+      "rating_result": [ "ccm.component", "https://ccmjs.github.io/tkless-components/star_rating_result/versions/ccm.star_rating_result-1.0.0.js", {
+        "data": {
+          "store": [ "ccm.store", { "store": "dms_component_ratings", "url": 'http://localhost:8080' } ]
+        }
+      } ],
 
       rating: [ "ccm.component",  "https://ccmjs.github.io/tkless-components/star_rating/versions/ccm.star_rating-1.0.0.js", {
         star_title: [ "Gefällt mir gar nicht", "Gefällt mir nicht", "Ist Ok", "Gefällt mir", "Gefällt mir sehr" ],
@@ -292,11 +298,6 @@
           data: {
             store: [ "ccm.store", { store: 'app_universe_components_ratings', url: 'http://localhost:8080' } ]
           }
-      } ],
-      rating_result: [ "ccm.component",  "https://ccmjs.github.io/tkless-components/star_rating_result/versions/ccm.star_rating_result-1.0.0.js", {
-        data: {
-          store: [ "ccm.store", { store: 'app_universe_components_ratings', url: 'http://localhost:8080' } ]
-        }
       } ],
       crud_app: [ "ccm.component",  "https://ccmjs.github.io/akless-components/crud_app/versions/ccm.crud_app-2.0.0.js" ],
       libs: [ 'ccm.load',
@@ -394,26 +395,40 @@
 
           /** renders all components */
           function renderAllComponents() {
-            main_elem.querySelector( '#content' ).innerHTML = '';
 
-            for( let key in components ) {
-              const entry = $.html( my.html.entry, {
-                title:  components[ key ].title,
+            // clear content area
+            $.setContent( content_elem, $.html( { id: 'all_components' } ) );
+
+            /**
+             * contains component entries
+             * @type {Element}
+             */
+            const all_components_elem = content_elem.querySelector( '#all_components' );
+
+            // iterate over component datasets
+            for ( const key in components ) {
+
+              // prepare HTML structure of component entry
+              const entry_elem = $.html( my.html.entry, {
+                title: components[ key ].title,
                 developer: components[ key ].developer,
-                component: function ( ) {
-                  changeSelectedMenuEntry( this );
-                  renderComponentView( key );
+                click: () => {
+                  changeSelectedMenuEntry();
+                  renderComponent( key );
                 }
               } );
-              const content_elem = main_elem.querySelector( '#content' );
-              content_elem.classList.add( 'flex' );
-              content_elem.appendChild( entry );
-              my.rating_result.start( { /*{ 'data.key': key },*/ }, function ( instance ) {
-                entry.querySelector( '.rating' ).appendChild( instance.root );
+
+              // render component entry
+              all_components_elem.appendChild( entry_elem );
+
+              // render star rating results of component
+              my.rating_result.start( {
+                root: entry_elem.querySelector( '.rating' ),
+                'data.key': components[ key ].key
               } );
             }
 
-            function renderComponentView( key ) {
+            function renderComponent( key ) {
 
               const comp_elem  = $.html( my.html.component, {
                 title:  components[ key ].title,
@@ -542,11 +557,11 @@
 
           /**
            * changes the selected header menu entry
-           * @param {Element} item - clicked header button
+           * @param {Element} [item] - clicked header button
            */
           function changeSelectedMenuEntry( item ) {
             [ ...main_elem.querySelectorAll( '#header > div' ) ].map( div => { div.classList.remove( 'active' ); } );
-            item.classList.add( 'active' );
+            item && item.classList.add( 'active' );
           }
 
         } );
