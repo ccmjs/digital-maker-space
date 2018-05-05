@@ -3,9 +3,6 @@
  * @author Tea Kless <tea.kless@web.de>, 2018
  * @author André Kless <andre.kless@web.de>, 2018
  * @license The MIT License (MIT)
- *
- * TODO: select box for versions in details view
- * TODO: layout of star rating results (brackets for total count and no fixed with)
  */
 
 {
