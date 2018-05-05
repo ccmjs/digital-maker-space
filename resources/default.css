@@ -12,13 +12,12 @@
 #main {
   display: flex;
   flex-direction: column;
-  border: 1px solid #e7e7e7;
 }
 
 #header {
   z-index: 99;
   background-color: #f3f3f3;
-  border-bottom: 1px solid #e7e7e7;
+  border: 1px solid #e7e7e7;
   position: -webkit-sticky;
   position: sticky;
   top: 0;
@@ -64,6 +63,8 @@
 }
 
 #content {
+  border-left: 1px solid #e7e7e7;
+  border-right: 1px solid #e7e7e7;
   flex-grow: 1;
 }
 
@@ -75,7 +76,7 @@
   align-content: center;
   color: #dddddd;
   height: 4em;
-  border-top: 1px solid #e7e7e7;
+  border: 1px solid #e7e7e7;
 }
 
 #footer > div {
