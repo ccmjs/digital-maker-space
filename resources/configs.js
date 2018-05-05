@@ -244,7 +244,7 @@ ccm.files[ 'configs.js' ] = {
               "type": "text",
               "id": "developer-input",
               "class": "form-control",
-              "name": "name"
+              "name": "developer"
             }
           ]
         },

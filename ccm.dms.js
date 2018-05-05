@@ -5,8 +5,6 @@
  * @license The MIT License (MIT)
  *
  * TODO: select box for versions in details view
- * TODO: lexicographical order of components (title and developer)
- * TODO: check if component with same title and developer already exists
  * TODO: layout of star rating results (brackets for total count and no fixed with)
  */
 
@@ -399,6 +397,19 @@
             // view with all components already active? => abort
             if ( content_elem.querySelector( '#all_components' ) ) return;
 
+            // sort components by title and developer
+            components.sort( ( a, b ) => {
+              const title_x = a.title.toLowerCase();
+              const title_y = b.title.toLowerCase();
+              const developer_x = ( a.developer || '' ).toLowerCase();
+              const developer_y = ( b.developer || '' ).toLowerCase();
+              if ( title_x < title_y ) return -1;
+              if ( title_x > title_y ) return 1;
+              if ( developer_x < developer_y ) return -1;
+              if ( developer_x > developer_y ) return 1;
+              return 0;
+            } );
+
             // clear content area
             $.setContent( content_elem, $.html( { id: 'all_components' } ) );
 
@@ -409,15 +420,15 @@
             const all_components_elem = content_elem.querySelector( '#all_components' );
 
             // iterate over component datasets
-            for ( const key in components ) {
+            components.map( component => {
 
               // prepare HTML structure of component entry
               const entry_elem = $.html( my.html.entry, {
-                title: components[ key ].title,
-                developer: components[ key ].developer,
+                title: component.title,
+                developer: component.developer,
                 click: () => {
                   changeSelectedMenuEntry();
-                  renderComponent( key );
+                  renderComponent( component.key );
                 }
               } );
 
@@ -427,9 +438,10 @@
               // render star rating results of component
               my.rating_result.start( {
                 root: entry_elem.querySelector( '.rating' ),
-                'data.key': components[ key ].key
+                'data.key': component.key
               } );
-            }
+
+            } );
 
             function renderComponent( key ) {
 
@@ -536,7 +548,7 @@
                 component_dataset.licence = 'MIT Licence';
 
                 // check if unique component name already exists
-                if ( my.data.store.get( name, dataset => {
+                my.data.store.get( name, dataset => {
                   if ( dataset ) return alert( 'Component with unique name "' + name + '" already exists.' );
 
                   // make sure that the developer really wants to publish
@@ -545,7 +557,7 @@
                   // save component dataset
                   my.data.store.set( component_dataset, () => { alert( 'Saved!' ); self.start(); } );
 
-                } ) )
+                } );
 
                 return false;
               }
