@@ -2,7 +2,7 @@
  * @overview ccm component for digital maker space
  * @author Tea Kless <tea.kless@web.de>, 2018
  * @author André Kless <andre.kless@web.de>, 2018
- * @license The MIT License (MIT)
+ * @license MIT License
  */
 
 {
@@ -555,7 +555,7 @@
                 // add name and version number in component dataset
                 component_dataset.key = name;
                 component_dataset.version = version;
-                component_dataset.license = 'The MIT License';
+                component_dataset.license = 'MIT License';
 
                 // check if unique component name already exists
                 my.data.store.get( name, dataset => {
