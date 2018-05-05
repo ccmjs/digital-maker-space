@@ -433,7 +433,7 @@
                 developer: component.developer,
                 click: () => {
                   changeSelectedMenuEntry();
-                  renderComponent( component.key );
+                  renderComponent( component );
                 }
               } );
 
@@ -448,17 +448,17 @@
 
             } );
 
-            function renderComponent( key ) {
+            function renderComponent( component ) {
 
               const comp_elem  = $.html( my.html.component, {
-                title:  components[ key ].title,
-                abstract:  components[ key ].abstract,
-                details: function(){ renderDetails( key ); },
+                title:  component.title,
+                abstract:  component.abstract,
+                details: function(){ renderDetails( component ); },
                 demo: function () {
-                  if (  !components[ key ].demos ) return;
+                  if (  !component.demos ) return;
 
                   $.setContent( comp_elem.querySelector( '.content' ), '');
-                  ccm.start( components[ key ].versions[0].minified ? components[ key ].versions[0].minified : components[ key ].versions[0].source, components[ key ].demos[0], function (instance) {
+                  ccm.start( component.versions[0].minified ? component.versions[0].minified : component.versions[0].source, component.demos[0], function (instance) {
                     self.element.querySelector( '.content' ).appendChild( instance.root );
                   } );
                 },
@@ -467,8 +467,8 @@
 
                   self.element.querySelector( '#content' ).classList.remove( 'flex' );
                   my.submit.start( {
-                    "key": ["ccm.get", "resources/configs.js", "add_new_component"],
-                    "data": { store: my.data.store, key: components[ key ].key },
+                    "key": ["ccm.get", "resources/configs.js", "publish_form"],
+                    "data": { store: my.data.store, key: component.key },
                     "onfinish.callback": function ( instance, results ) {
                       my.data.store.set( components[ components.length ] = results, () => {
                         self.start();
@@ -480,12 +480,12 @@
                   } );
                 },
                 create: function () {
-                  console.log(components[ key ].versions[ 0 ].source);
+                  console.log(component.versions[ 0 ].source);
                   my.crud_app.start( {
                     root: self.element.querySelector( '.content' ),
-                    "builder": [ "ccm.component", components[ key ].factories[ 0 ].url, components[ key ].factories[ 0 ].config ],
-                    "store": [ "ccm.store", { "store": "universe_"+ components[ key ].key, "url": "https://ccm2.inf.h-brs.de" } ],
-                    "url": components[ key ].versions[ 0 ].source
+                    "builder": [ "ccm.component", component.factories[ 0 ].url, component.factories[ 0 ].config ],
+                    "store": [ "ccm.store", { "store": "universe_"+ component.key, "url": "https://ccm2.inf.h-brs.de" } ],
+                    "url": component.versions[ 0 ].source
                   } );
                 }
               } );
@@ -496,18 +496,18 @@
               } );
 
               $.setContent( main_elem.querySelector( '#content' ), comp_elem );
-              renderDetails( key );
+              renderDetails( component );
               main_elem.querySelector( '#details-btn' ).classList.add( 'active' );
             }
 
-            function renderDetails( key ) {
+            function renderDetails( component ) {
               console.log( 'details' );
               const detail_elem = $.html( my.html.details, {
-                comp_name: components[ key ].key,
+                comp_name: component.key,
                 versions: "1.0.0",
-                developer: components[ key ].developer,
-                licence: components[ key ].licence,
-                website: components[ key ].website || ''
+                developer: component.developer,
+                licence: component.licence,
+                website: component.website || ''
               } );
 
               self.element.querySelector( '.content' ).innerHTML = '';
