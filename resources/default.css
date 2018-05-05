@@ -26,6 +26,7 @@
   display: grid;
   grid-template-columns: auto auto;
   align-items: center;
+  white-space: nowrap;
 }
 
 #header #logo {
@@ -46,7 +47,6 @@
 }
 
 #header .button {
-  white-space: nowrap;
   padding: 0.8em;
   border-left: 1px solid #bbb;
   color: #666;
