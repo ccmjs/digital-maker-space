@@ -285,8 +285,13 @@
       "submit": [ "ccm.component", "https://ccmjs.github.io/akless-components/submit/versions/ccm.submit-3.1.0.js" ],
       "configs": [ "ccm.store", "resources/configs.js" ],
       "rating_result": [ "ccm.component", "https://ccmjs.github.io/tkless-components/star_rating_result/versions/ccm.star_rating_result-1.0.0.js", {
+        "css": [ "ccm.load",
+          { "context": "head", "url": "https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" },
+          "https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css",
+          "resources/css/star_rating_result.css"
+        ],
         "data": {
-          "store": [ "ccm.store", { "store": "dms_component_ratings", "url": 'http://localhost:8080' } ]
+          "store": [ "ccm.store", { "store": "dms_component_ratings", "url": "http://localhost:8080" } ]
         }
       } ],
 

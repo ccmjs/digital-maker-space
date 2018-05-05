@@ -104,7 +104,7 @@
 }
 
 #all_components .entry .left {
-  padding-right: 1.2em;
+  padding-right: 1em;
 }
 
 #all_components .entry img {
@@ -114,16 +114,16 @@
 
 #all_components .entry .title {
   font-size: 16px;
+  white-space: nowrap;
+  padding-left: 5px;
 }
 
 #all_components .entry .developer {
   font-family: Verdana, sans-serif;
   font-size: 12px;
   color: #999999;
-}
-
-#all_components .entry .rating {
-  font-size: 10px;
+  white-space: nowrap;
+  padding-left: 5px;
 }
 
 #component-view {

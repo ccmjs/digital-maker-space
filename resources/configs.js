@@ -4,7 +4,7 @@ ccm.files[ 'configs.js' ] = {
     "css": [ "ccm.load",
       { "context": "head", "url": "https://tkless.github.io/ccm-components/libs/bootstrap/css/font-face.css" },
       "https://tkless.github.io/ccm-components/libs/bootstrap/css/bootstrap.css",
-      "resources/submit.css" ],
+      "resources/css/submit.css" ],
     "inner": {
       "id": "main",
       "class": "container",
