@@ -272,11 +272,11 @@
                     "inner": [
                       {
                         "tag": "th",
-                        "inner": "Licence"
+                        "inner": "License"
                       },
                       {
                         "tag": "td",
-                        "inner": "%licence%"
+                        "inner": "%license%"
                       }
                     ]
                   }
@@ -511,7 +511,7 @@
                 comp_name: component.key,
                 versions: "1.0.0",
                 developer: component.developer,
-                licence: component.licence,
+                license: component.license,
                 website: component.website || ''
               } );
 
@@ -555,7 +555,7 @@
                 // add name and version number in component dataset
                 component_dataset.key = name;
                 component_dataset.version = version;
-                component_dataset.licence = 'MIT Licence';
+                component_dataset.license = 'The MIT License';
 
                 // check if unique component name already exists
                 my.data.store.get( name, dataset => {

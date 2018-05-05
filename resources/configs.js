@@ -249,30 +249,30 @@ ccm.files[ 'configs.js' ] = {
           ]
         },
         {
-          "id": "licence",
+          "id": "license",
           "class": "form-group",
           "inner": [
             {
               "tag": "label",
-              "id": "licence-label",
-              "for": "licence-input",
+              "id": "license-label",
+              "for": "license-input",
               "class": "control-label required",
-              "inner": "Licence"
+              "inner": "License"
             },
             {
               "tag": "span",
-              "id": "licence-help",
+              "id": "license-help",
               "class": "help",
               "inner": [
                 {
                   "tag": "a",
-                  "id": "licence-icon",
+                  "id": "license-icon",
                   "inner": {
                     "class": "glyphicon glyphicon-info-sign"
                   }
                 },
                 {
-                  "id": "licence-info",
+                  "id": "license-info",
                   "class": "alert alert-info",
                   "inner": "Components can only be published as free software under MIT license."
                 }
@@ -281,11 +281,11 @@ ccm.files[ 'configs.js' ] = {
             {
               "tag": "input",
               "type": "text",
-              "id": "licence-input",
+              "id": "license-input",
               "class": "form-control",
-              "name": "licence",
-              "value": "MIT Licence",
-              "pattern": "MIT Licence",
+              "name": "license",
+              "value": "The MIT License",
+              "pattern": "The MIT License",
               "disabled": true,
               "required": true
             }

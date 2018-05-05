@@ -17,7 +17,7 @@ ccm.files[ "datasets.js" ] = {
       }
     ],
     "developer": "Tea Kless",
-    "licence": "The MIT License (MIT)",
+    "license": "The MIT License (MIT)",
     "website": "https://github.com/tkless/ccm-components/",
     "demos": [
       [  "ccm.get", "https://ccmjs.github.io/tkless-components/exercise/resources/configs.js", "demo"  ]
@@ -49,7 +49,7 @@ ccm.files[ "datasets.js" ] = {
       }
     ],
     "developer": "Manfred Kaul",
-    "licence": "The MIT License (MIT)",
+    "license": "The MIT License (MIT)",
     "website": "https://github.com/mkaul/ccm-components/",
     "demos":[
       [ "ccm.get", "https://kaul.inf.h-brs.de/data/ccm/difference_chart/resources/configs.js", "research" ]
@@ -72,7 +72,7 @@ ccm.files[ "datasets.js" ] = {
       }
     ],
     "developer": "Tea Kless",
-    "licence": "The MIT License (MIT)",
+    "license": "The MIT License (MIT)",
     "website": "https://github.com/tkless/ccm-components/",
     "demos": [
       { pdf: //[ "ccm.get", { url: "https://ccm.inf.h-brs.de", store: "file_upload" }, "1517228670954X509252249813553" ],
@@ -131,7 +131,7 @@ ccm.files[ "datasets.js" ] = {
       }
     ],
     "developer": "André Kless",
-    "licence": "The MIT License (MIT)",
+    "license": "The MIT License (MIT)",
     "website": "https://github.com/akless/ccm-components/",
     "demos": [
       [ "ccm.get", "https://ccmjs.github.io/akless-components/content/resources/configs.min.js", "demo" ]
@@ -161,7 +161,7 @@ ccm.files[ "datasets.js" ] = {
       }
     ],
     "developer": "Tea Kless",
-    "licence": "The MIT License (MIT)",
+    "license": "The MIT License (MIT)",
     "website": "https://github.com/tkless/ccm-components/",
     "demos":[ {} ]
     /* "factories": [
@@ -191,7 +191,7 @@ ccm.files[ "datasets.js" ] = {
       }
     ],
     "developer": "André Kless",
-    "licence": "The MIT License (MIT)",
+    "license": "The MIT License (MIT)",
     "website": "https://github.com/akless/ccm-components/",
     "demos": [
       [ "ccm.get", "https://ccmjs.github.io/akless-components/eval/resources/configs.min.js", "demo" ]
@@ -243,7 +243,7 @@ ccm.files[ "datasets.js" ] = {
       }
     ],
     "developer": "André Kless",
-    "licence": "The MIT License (MIT)",
+    "license": "The MIT License (MIT)",
     "website": "https://github.com/ccmjs/akless-components/",
     "demos": [
       [ "ccm.get", "https://ccmjs.github.io/akless-components/cloze/resources/configs.js", "demo" ]
@@ -281,7 +281,7 @@ ccm.files[ "datasets.js" ] = {
       }
     ],
     "developer": "Tea Kless",
-    "licence": "The MIT License (MIT)",
+    "license": "The MIT License (MIT)",
     "website": "https://github.com/tkless/ccm-components/",
     "demos": [ {} ]
     /*"factories": [
@@ -312,7 +312,7 @@ ccm.files[ "datasets.js" ] = {
       }
     ],
     "developer": "Manfred Kaul",
-    "licence": "The MIT License (MIT)",
+    "license": "The MIT License (MIT)",
     "website": "https://github.com/mkaul/ccm-components/",
     "demos": [ {} ]/*,
     "factories": [
@@ -342,7 +342,7 @@ ccm.files[ "datasets.js" ] = {
       }
     ],
     "developer": "Tea Kless",
-    "licence": "The MIT License (MIT)",
+    "license": "The MIT License (MIT)",
     "website": "https://github.com/tkless/ccm-components/",
     "demos": [ {} ]/*,
     "factories": [
@@ -374,7 +374,7 @@ ccm.files[ "datasets.js" ] = {
       }
     ],
     "developer": "Tea Kless",
-    "licence": "The MIT License (MIT)",
+    "license": "The MIT License (MIT)",
     "website": "https://github.com/tkless/ccm-components/",
     "demos": [  [ "ccm.get", "https://ccmjs.github.io/tkless-components/feedback/resources/configs.min.js", "demo" ] ]/*,
     "factories": [
@@ -409,7 +409,7 @@ ccm.files[ "datasets.js" ] = {
       }
     ],
     "developer": "Manfred Kaul",
-    "licence": "The MIT License (MIT)",
+    "license": "The MIT License (MIT)",
     "website": "https://github.com/mkaul/ccm-components/",
     "demos": [ {} ]/*,
     "factories": [
@@ -440,7 +440,7 @@ ccm.files[ "datasets.js" ] = {
       }
     ],
     "developer": "Manfred Kaul",
-    "licence": "The MIT License (MIT)",
+    "license": "The MIT License (MIT)",
     "website": "https://github.com/mkaul/ccm-components/",
     "demos": [ {} ]/*,
     "factories": [
@@ -466,7 +466,7 @@ ccm.files[ "datasets.js" ] = {
       }
     ],
     "developer": "Manfred Kaul",
-    "licence": "The MIT License (MIT)",
+    "license": "The MIT License (MIT)",
     "website": "https://github.com/mkaul/ccm-components/"/*,
     "factories": [
       {
@@ -492,7 +492,7 @@ ccm.files[ "datasets.js" ] = {
       }
     ],
     "developer": "André Kless",
-    "licence": "The MIT License (MIT)",
+    "license": "The MIT License (MIT)",
     "website": "https://github.com/akless/ccm-components/",
     "demos": [
       [ "ccm.get", "https://ccmjs.github.io/akless-components/input/resources/configs.min.js", "demo" ]
@@ -531,7 +531,7 @@ ccm.files[ "datasets.js" ] = {
       }
     ],
     "developer": "André Kless",
-    "licence": "The MIT License (MIT)",
+    "license": "The MIT License (MIT)",
     "website": "https://github.com/akless/ccm-components/",
     "demos": [
       [ "ccm.get", "https://ccmjs.github.io/akless-components/kanban_board/resources/configs.min.js", "demo" ]
@@ -567,7 +567,7 @@ ccm.files[ "datasets.js" ] = {
       }
     ],
     "developer": "André Kless",
-    "licence": "The MIT License (MIT)",
+    "license": "The MIT License (MIT)",
     "website": "https://github.com/akless/ccm-components/",
     "demos": [
       [ "ccm.get", "https://ccmjs.github.io/akless-components/kanban_card/resources/configs.min.js", "realtime" ]
@@ -603,7 +603,7 @@ ccm.files[ "datasets.js" ] = {
       }
     ],
     "developer": "André Kless",
-    "licence": "The MIT License (MIT)",
+    "license": "The MIT License (MIT)",
     "website": "https://github.com/akless/ccm-components/",
     "demos": [
       [ "ccm.get", "https://akless.github.io/akless/ccm/ccm-overview/configs.min.js", "le" ]
@@ -638,7 +638,7 @@ ccm.files[ "datasets.js" ] = {
       }
     ],
     "developer": "Manfred Kaul",
-    "licence": "The MIT License (MIT)",
+    "license": "The MIT License (MIT)",
     "website": "https://github.com/mkaul/ccm-components/",
     "demos": [ {} ]/*,
     "factories": [
@@ -665,7 +665,7 @@ ccm.files[ "datasets.js" ] = {
       }
     ],
     "developer": "André Kless",
-    "licence": "The MIT License (MIT)",
+    "license": "The MIT License (MIT)",
     "website": "https://github.com/akless/ccm-components/"/*,
     "factories": [
       {
@@ -694,7 +694,7 @@ ccm.files[ "datasets.js" ] = {
       }
     ],
     "developer": "Tea Kless",
-    "licence": "The MIT License (MIT)",
+    "license": "The MIT License (MIT)",
     "website": "https://github.com/tkless/ccm-components/",
     "demos": [ {} ]/*,
     "factories": [
@@ -724,7 +724,7 @@ ccm.files[ "datasets.js" ] = {
       }
     ],
     "developer": "Tea Kless",
-    "licence": "The MIT License (MIT)",
+    "license": "The MIT License (MIT)",
     "website": "https://github.com/tkless/ccm-components/",
     "demos": [ {} ]/*,
     "factories": [
@@ -760,7 +760,7 @@ ccm.files[ "datasets.js" ] = {
       }
     ],
     "developer": "André Kless",
-    "licence": "The MIT License (MIT)",
+    "license": "The MIT License (MIT)",
     "website": "https://github.com/akless/ccm-components/",
     "demos": [
       [ "ccm.get", "https://ccmjs.github.io/akless-components/quiz/resources/configs.min.js", "demo" ]
@@ -794,7 +794,7 @@ ccm.files[ "datasets.js" ] = {
       }
     ],
     "developer": "Tea Kless",
-    "licence": "The MIT License (MIT)",
+    "license": "The MIT License (MIT)",
     "website": "https://github.com/tkless/ccm-components/",
     "demos": [ {} ]/*,
     "factories": [
@@ -824,7 +824,7 @@ ccm.files[ "datasets.js" ] = {
       }
     ],
     "developer": "Tea Kless",
-    "licence": "The MIT License (MIT)",
+    "license": "The MIT License (MIT)",
     "website": "https://github.com/tkless/ccm-components/",
     "demos": [ {} ]/*,
     "factories": [
@@ -855,7 +855,7 @@ ccm.files[ "datasets.js" ] = {
       }
     ],
     "developer": "Tea Kless",
-    "licence": "The MIT License (MIT)",
+    "license": "The MIT License (MIT)",
     "website": "https://github.com/tkless/ccm-components/",
     "demos": [ {} ]/*,
     "factories": [
@@ -887,7 +887,7 @@ ccm.files[ "datasets.js" ] = {
       }
     ],
     "developer": "André Kless",
-    "licence": "The MIT License (MIT)",
+    "license": "The MIT License (MIT)",
     "website": "https://github.com/akless/ccm-components/",
     "demos": [
       [ "ccm.get", "https://ccmjs.github.io/akless-components/teambuild/resources/configs.min.js", "demo" ]
@@ -922,7 +922,7 @@ ccm.files[ "datasets.js" ] = {
       }
     ],
     "developer": "André Kless",
-    "licence": "The MIT License (MIT)",
+    "license": "The MIT License (MIT)",
     "website": "https://github.com/akless/ccm-components/"/*,
     "factories": [
       {
@@ -951,7 +951,7 @@ ccm.files[ "datasets.js" ] = {
       }
     ],
     "developer": "Tea Kless",
-    "licence": "The MIT License (MIT)",
+    "license": "The MIT License (MIT)",
     "website": "https://github.com/tkless/ccm-components/",
     "demos": [ {} ]/*,
     "factories": [
@@ -978,7 +978,7 @@ ccm.files[ "datasets.js" ] = {
       }
     ],
     "developer": "André Kless",
-    "licence": "The MIT License (MIT)",
+    "license": "The MIT License (MIT)",
     "website": "https://github.com/akless/ccm-components/",
     "demos": [
       [ "ccm.get", "https://ccmjs.github.io/akless-components/user/resources/configs.min.js", "demo" ]
@@ -1012,7 +1012,7 @@ ccm.files[ "datasets.js" ] = {
       }
     ],
     "developer": "Manfred Kaul",
-    "licence": "The MIT License (MIT)",
+    "license": "The MIT License (MIT)",
     "website": "https://github.com/mkaul/ccm-components/",
     "demos": [ {} ]/*,
     "factories": [
@@ -1043,7 +1043,7 @@ ccm.files[ "datasets.js" ] = {
       }
     ],
     "developer": "Manfred Kaul",
-    "licence": "The MIT License (MIT)",
+    "license": "The MIT License (MIT)",
     "website": "https://github.com/mkaul/ccm-components/",
     "demos": [ {} ]/*,
     "factories": [
@@ -1073,7 +1073,7 @@ ccm.files[ "datasets.js" ] = {
       }
     ],
     "developer": "Tea Kless",
-    "licence": "The MIT License (MIT)",
+    "license": "The MIT License (MIT)",
     "website": "https://github.com/tkless/ccm-components/",
     "demos": [ {} ]/*,
     "factories": [
