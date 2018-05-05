@@ -5,6 +5,10 @@
  * @license The MIT License (MIT)
  */
 
+#element, #main {
+  height: 100%;
+}
+
 #main {
   display: flex;
   flex-direction: column;
