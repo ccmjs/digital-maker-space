@@ -24,13 +24,9 @@
   top: 0;
   width: 100%;
   height: 4em;
-  display: flex;
+  display: grid;
+  grid-template-columns: auto auto;
   align-items: center;
-}
-
-#header > div {
-  white-space: nowrap;
-  padding: 0.8em;
 }
 
 #header #logo {
@@ -38,24 +34,32 @@
   letter-spacing: 0.2em;
   font-size: large;
   width: 100%;
+  padding: 0.8em;
 }
 
 #header #logo > span {
   cursor: pointer;
 }
 
-#header > div:not(:first-child) {
+#header #buttons {
+  display: flex;
+  justify-content: flex-end;
+}
+
+#header .button {
+  white-space: nowrap;
+  padding: 0.8em;
   border-left: 1px solid #bbb;
   color: #666;
   cursor: pointer;
 }
 
-#header > div:not(:first-child).active {
+#header .button.active {
   color: white;
   background-color: #4CAF50;
 }
 
-#header > div:not(:first-child):hover:not(.active) {
+#header .button:hover:not(.active) {
   background-color: #ddd;
 }
 
@@ -76,7 +80,7 @@
 
 #footer > div {
   letter-spacing: 2px;
-  font-family: Verdana;
+  font-family: Verdana, sans-serif;
   font-size: large;
   padding: 0.5em;
 }

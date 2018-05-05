@@ -41,18 +41,26 @@
                   }
                 },
                 {
-                  "id": "all_components",
-                  "inner": "All Components",
-                  "onclick": "%all_components%"
-                },
-                {
-                  "id": "publish",
-                  "inner": "Publish Component",
-                  "onclick": "%publish%"
-                },
-                {
-                  "id": "log_in",
-                  "inner": "Log In"
+                  "id": "buttons",
+                  "inner": [
+                    {
+                      "id": "button-all_components",
+                      "class": "button",
+                      "inner": "All Components",
+                      "onclick": "%all_components%"
+                    },
+                    {
+                      "id": "button-publish",
+                      "class": "button",
+                      "inner": "Publish Component",
+                      "onclick": "%publish%"
+                    },
+                    {
+                      "id": "log_in",
+                      "class": "button",
+                      "inner": "Log In"
+                    }
+                  ]
                 }
               ]
             },
@@ -587,7 +595,7 @@
            * @param {Element} [item] - clicked header button
            */
           function changeSelectedMenuEntry( item ) {
-            [ ...main_elem.querySelectorAll( '#header > div' ) ].map( div => { div.classList.remove( 'active' ); } );
+            [ ...main_elem.querySelectorAll( '#header .button' ) ].map( div => { div.classList.remove( 'active' ); } );
             item && item.classList.add( 'active' );
           }
 
