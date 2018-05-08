@@ -220,6 +220,7 @@ ccm.files[ "datasets.js" ] = {
       "https://ccmjs.github.io/akless-components/cloze/resources/screenshot_3.jpg"
     ],
     "description": "The component supports solution hints, visual feedback, point allocation, time limitation, different layouts, authentication procedures, customization of buttons and learning analysis.",
+    "version": [ 4, 0, 0 ],
     "versions": [
       {
         "version": "4.0.0",

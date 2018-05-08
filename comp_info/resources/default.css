@@ -1,0 +1,68 @@
+/**
+ * @overview default layout of ccm component for component information's
+ * @author André Kless <andre.kless@web.de.de> 2018
+ * @author Tea Kless <tea.kless@web.de.de> 2018
+ * @license MIT License
+ */
+
+#header {
+  width: 40em;
+  height: 11em;
+  overflow: hidden;
+  padding: 1em;
+  display: flex;
+  align-items: center;
+}
+
+#header-left {
+  padding-right: 1em;
+}
+
+#header-left img {
+  width: 120px;
+  height: 120px;
+}
+
+#header-top {
+  font-size: 16px;
+  padding-left: 5px;
+}
+
+#header-title, #header-version {
+  white-space: nowrap;
+}
+
+#header-version {
+  color: #999999;
+  margin-left: 0.5em;
+}
+
+#header-version:before {
+  content: 'v';
+}
+
+#header-developer {
+  font-family: Verdana, sans-serif;
+  font-size: 12px;
+  color: #999999;
+  white-space: nowrap;
+  padding-left: 5px;
+}
+
+#header-right {
+  display: flex;
+  flex-direction: column;
+}
+
+#header-abstract {
+ padding-left: 5px;
+}
+
+#buttons {
+  display: flex;
+  justify-content: center;
+}
+
+#content {
+  padding: 3em 0;
+}
