@@ -22,6 +22,7 @@ ccm.files[ 'configs.js' ] = {
 
   "live": {
     "data.store.1": { "store": "components", "url": "https://ccm2.inf.h-brs.de" },
+    "data.key": "{}",
     "rating_result.2.data.store.1": { "store": "component_ratings", "url": "https://ccm2.inf.h-brs.de" }
   }
 
