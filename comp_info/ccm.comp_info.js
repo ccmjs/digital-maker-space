@@ -288,7 +288,7 @@
           const main_elem  = $.html( my.html.main, {
             icon: my.component_icon,
             title: dataset.title,
-            version: dataset.version.join( '.' ),
+            version: dataset.version ? dataset.version.join( '.' ) : '1.0.0',
             developer: dataset.developer,
             abstract:  dataset.abstract,
             info: function () { renderDetails( dataset ); },
@@ -328,7 +328,7 @@
           } );
 
           // render rating of component
-          my.rating.start( { 'data.key': dataset.key + '-' + dataset.version.join( '-' ), star_title: [ '', '', '', '', '' ] }, instance => $.setContent( main_elem.querySelector( '#header-rating' ), instance.root ) );
+          my.rating.start( { 'data.key': dataset.key + ( dataset.version ? '-' + dataset.version.join( '-' ) : '' ), star_title: [ '', '', '', '', '' ] }, instance => $.setContent( main_elem.querySelector( '#header-rating' ), instance.root ) );
 
           $.setContent( self.element, main_elem );
 
