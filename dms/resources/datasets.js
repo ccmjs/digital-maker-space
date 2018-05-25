@@ -877,6 +877,11 @@ ccm.files[ "datasets.js" ] = {
     "abstract": "For realtime team building.",
     "versions": [
       {
+        "version": "2.0.0",
+        "source": "https://ccmjs.github.io/akless-components/teambuild/versions/ccm.teambuild-2.0.0.js",
+        "minified": "https://ccmjs.github.io/akless-components/teambuild/versions/ccm.teambuild-2.0.0.min.js"
+      },
+      {
         "version": "1.0.1",
         "source": "https://ccmjs.github.io/akless-components/teambuild/versions/ccm.teambuild-1.0.1.js",
         "minified": "https://ccmjs.github.io/akless-components/teambuild/versions/ccm.teambuild-1.0.1.min.js"
@@ -891,12 +896,12 @@ ccm.files[ "datasets.js" ] = {
     "license": "MIT License",
     "website": "https://github.com/akless/ccm-components/",
     "demos": [
-      [ "ccm.get", "https://ccmjs.github.io/akless-components/teambuild/resources/configs.min.js", "demo" ]
+      [ "ccm.get", "https://ccmjs.github.io/akless-components/teambuild/resources/configs.js", "demo" ]
     ],
     "factories": [
       {
-        "url": "https://ccmjs.github.io/akless-components/teambuild_builder/versions/ccm.teambuild_builder-2.4.0.min.js",
-        "config": {}
+        "url": "https://ccmjs.github.io/akless-components/teambuild_builder/versions/ccm.teambuild_builder-3.0.0.js",
+        "config": [ "ccm.get", "https://ccmjs.github.io/akless-components/teambuild_builder/resources/configs.js", "demo" ]
       }/*,
       {
         "url": "https://leoneck.github.io/ccm-factory/dist/ccm.factory-1.0.0.min.js",
