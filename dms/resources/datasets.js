@@ -249,8 +249,8 @@ ccm.files[ "datasets.js" ] = {
     "factories": [
       {
         "url": "https://ccmjs.github.io/akless-components/cloze_builder/versions/ccm.cloze_builder-2.2.0.js",
-        "config": [ "ccm.get", "https://ccmjs.github.io/akless-components/cloze_builder/resources/configs.js", "demo" ]
-      },
+        "config": { "submit_button": false }
+      }/*,
       {
         "url": "https://leoneck.github.io/ccm-factory/dist/ccm.factory-1.0.0.min.js",
         "config": {
@@ -261,7 +261,7 @@ ccm.files[ "datasets.js" ] = {
           "display_final_component_and_config": false,
           "no_bootstrap_container": true
         }
-      }
+      }*/
     ]
   },
   "editor": {

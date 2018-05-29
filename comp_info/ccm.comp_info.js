@@ -303,9 +303,9 @@
             create: function () {
               my.crud_app.start( {
                 root: self.element.querySelector( '#content' ),
-                "builder": [ "ccm.component", dataset.factories[ 0 ].url, dataset.factories[ 0 ].config ],
-                "store": [ "ccm.store", { "store": "universe_"+ dataset.key, "url": "https://ccm2.inf.h-brs.de" } ],
-                "url": dataset.versions[ 0 ].source
+                builder: [ 'ccm.component', dataset.factories[ 0 ].url, dataset.factories[ 0 ].config ],
+                store: [ 'ccm.store', { store: dataset.key, url: 'https://ccm2.inf.h-brs.de' } ],
+                url: dataset.versions[ 0 ].source
               } );
             },
             edit: function () {
