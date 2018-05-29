@@ -1,6 +1,7 @@
 /**
  * @overview components data
  * @author Tea Kless <tea.kless@web.de> 2018
+ * @author André Kless <andre.kless@web.de> 2018
  * @license MIT License
  */
 
@@ -60,6 +61,11 @@ ccm.files[ "datasets.js" ] = {
     "title": "PDF Viewer",
     "abstract": "For rendering a PDF",
     "versions": [
+      {
+        "version": "3.0.0",
+        "source": "https://ccmjs.github.io/tkless-components/pdf_viewer/versions/ccm.pdf_viewer-3.0.0.js",
+        "minified": "https://ccmjs.github.io/tkless-components/pdf_viewer/versions/ccm.pdf_viewer-3.0.0.min.js"
+      },
       {
         "version": "2.1.0",
         "source": "https://ccmjs.github.io/tkless-components/pdf_viewer/versions/ccm.pdf_viewer-2.1.0.js",
@@ -214,33 +220,24 @@ ccm.files[ "datasets.js" ] = {
     "key": "cloze",
     "title": "Fill-in-the-Blank Text",
     "abstract": "For rendering a fill-in-the-blank text.",
-    "screenshots": [
-      "https://ccmjs.github.io/akless-components/cloze/resources/screenshot_1.jpg",
-      "https://ccmjs.github.io/akless-components/cloze/resources/screenshot_2.jpg",
-      "https://ccmjs.github.io/akless-components/cloze/resources/screenshot_3.jpg"
-    ],
     "description": "The component supports solution hints, visual feedback, point allocation, time limitation, different layouts, authentication procedures, customization of buttons and learning analysis.",
-    "version": [ 4, 0, 0 ],
+    "version": [ 4, 1, 0 ],
     "versions": [
       {
-        "version": "4.0.0",
-        "source": "https://ccmjs.github.io/akless-components/cloze/versions/ccm.cloze-4.0.0.js",
-        "minified": "https://ccmjs.github.io/akless-components/cloze/versions/ccm.cloze-4.0.0.min.js"
+        "version": "4.1.0",
+        "source": "https://ccmjs.github.io/akless-components/cloze/versions/ccm.cloze-4.1.0.js"
       },
       {
         "version": "3.9.0",
-        "source": "https://ccmjs.github.io/akless-components/cloze/versions/ccm.cloze-3.9.0.js",
-        "minified": "https://ccmjs.github.io/akless-components/cloze/versions/ccm.cloze-3.9.0.min.js"
+        "source": "https://ccmjs.github.io/akless-components/cloze/versions/ccm.cloze-3.9.0.js"
       },
       {
         "version": "2.2.0",
-        "source": "https://ccmjs.github.io/akless-components/cloze/versions/ccm.cloze-2.2.0.js",
-        "minified": "https://ccmjs.github.io/akless-components/cloze/versions/ccm.cloze-2.2.0.min.js"
+        "source": "https://ccmjs.github.io/akless-components/cloze/versions/ccm.cloze-2.2.0.js"
       },
       {
         "version": "1.0.0",
-        "source": "https://ccmjs.github.io/akless-components/cloze/versions/ccm.cloze-1.0.0.js",
-        "minified": "https://ccmjs.github.io/akless-components/cloze/versions/ccm.cloze-1.0.0.min.js"
+        "source": "https://ccmjs.github.io/akless-components/cloze/versions/ccm.cloze-1.0.0.js"
       }
     ],
     "developer": "André Kless",
@@ -251,8 +248,8 @@ ccm.files[ "datasets.js" ] = {
     ],
     "factories": [
       {
-        "url": "https://ccmjs.github.io/akless-components/cloze_builder/versions/ccm.cloze_builder-2.1.3.js",
-        "config": {}
+        "url": "https://ccmjs.github.io/akless-components/cloze_builder/versions/ccm.cloze_builder-2.2.0.js",
+        "config": [ "ccm.get", "https://ccmjs.github.io/akless-components/cloze_builder/resources/configs.js", "demo" ]
       },
       {
         "url": "https://leoneck.github.io/ccm-factory/dist/ccm.factory-1.0.0.min.js",
