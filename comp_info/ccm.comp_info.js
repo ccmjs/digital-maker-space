@@ -296,7 +296,7 @@
               if ( !dataset.demos ) return;
 
               $.setContent( main_elem.querySelector( '#content' ), '' );
-              ccm.start( dataset.versions[0].minified ? dataset.versions[0].minified : dataset.versions[0].source, dataset.demos[0], function (instance) {
+              ccm.start( dataset.versions[0].source, dataset.demos[0], function (instance) {
                 self.element.querySelector( '#content' ).appendChild( instance.root );
               } );
             },
