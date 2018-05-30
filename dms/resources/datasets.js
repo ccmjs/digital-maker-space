@@ -264,6 +264,24 @@ ccm.files[ "datasets.js" ] = {
       }*/
     ]
   },
+  "cloze_analytics": {
+    "key": "cloze_analytics",
+    "title": "Fill-in-the-Blank Text Analytics",
+    "abstract": "For rendering fill-in-the-blank analytics.",
+    "version": [ 1, 3, 0 ],
+    "versions": [
+      {
+        "version": "1.3.0",
+        "source": "https://ccmjs.github.io/akless-components/cloze_analytics/versions/ccm.cloze_analytics-1.3.0.js"
+      }
+    ],
+    "developer": "André Kless",
+    "license": "MIT License",
+    "website": "https://github.com/ccmjs/akless-components/",
+    "demos": [
+      [ "ccm.get", "https://ccmjs.github.io/akless-components/cloze_analytics/resources/configs.js", "teacher" ]
+    ]
+  },
   "editor": {
     "key": "editor",
     "title": "Quill Texteditor",

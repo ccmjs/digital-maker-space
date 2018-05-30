@@ -301,6 +301,7 @@
               } );
             },
             create: function () {
+              if ( !dataset.factories ) return;
               my.crud_app.start( {
                 root: self.element.querySelector( '#content' ),
                 builder: [ 'ccm.component', dataset.factories[ 0 ].url, dataset.factories[ 0 ].config ],
@@ -326,6 +327,8 @@
               } );
             }
           } );
+
+          if ( !dataset.factories ) main_elem.querySelector( '#button-create' ).classList.add( 'disabled' );
 
           // render rating of component
           my.rating.start( { 'data.key': dataset.key + ( dataset.version ? '-' + dataset.version.join( '-' ) : '' ), star_title: [ '', '', '', '', '' ] }, instance => $.setContent( main_elem.querySelector( '#header-rating' ), instance.root ) );
