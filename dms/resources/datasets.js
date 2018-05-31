@@ -13,8 +13,7 @@ ccm.files[ "datasets.js" ] = {
     "versions": [
       {
         "version": "1.0.0",
-        "source": "https://ccmjs.github.io/tkless-components/exercise/versions/ccm.exercise-1.0.0.js",
-        "minified":"https://ccmjs.github.io/tkless-components/exercise/versions/ccm.exercise-1.0.0.min.js"
+        "source": "https://ccmjs.github.io/tkless-components/exercise/versions/ccm.exercise-1.0.0.js"
       }
     ],
     "developer": "Tea Kless",
@@ -127,13 +126,11 @@ ccm.files[ "datasets.js" ] = {
     "versions": [
       {
         "version": "2.0.0",
-        "source": "https://ccmjs.github.io/akless-components/content/versions/ccm.content-2.0.0.js",
-        "minified": "https://ccmjs.github.io/akless-components/content/versions/ccm.content-2.0.0.min.js"
+        "source": "https://ccmjs.github.io/akless-components/content/versions/ccm.content-2.0.0.js"
       },
       {
         "version": "1.0.0",
-        "source": "https://ccmjs.github.io/akless-components/content/versions/ccm.content-1.0.0.js",
-        "minified": "https://ccmjs.github.io/akless-components/content/versions/ccm.content-1.0.0.min.js"
+        "source": "https://ccmjs.github.io/akless-components/content/versions/ccm.content-1.0.0.js"
       }
     ],
     "developer": "André Kless",
@@ -192,8 +189,7 @@ ccm.files[ "datasets.js" ] = {
     "versions": [
       {
         "version": "1.0.0",
-        "source": "https://ccmjs.github.io/akless-components/eval/versions/ccm.eval-1.0.0.js",
-        "minified": "https://ccmjs.github.io/akless-components/eval/versions/ccm.eval-1.0.0.min.js"
+        "source": "https://ccmjs.github.io/akless-components/eval/versions/ccm.eval-1.0.0.js"
       }
     ],
     "developer": "André Kless",
@@ -292,8 +288,7 @@ ccm.files[ "datasets.js" ] = {
     "versions": [
       {
         "version": "2.0.0",
-        "source": "https://ccmjs.github.io/tkless-components/editor/versions/ccm.editor-2.0.0.js",
-        "minified": "https://ccmjs.github.io/tkless-components/editor/versions/ccm.editor-2.0.0.min.js"
+        "source": "https://ccmjs.github.io/tkless-components/editor/versions/ccm.editor-2.0.0.js"
       }
     ],
     "developer": "Tea Kless",
@@ -323,8 +318,7 @@ ccm.files[ "datasets.js" ] = {
     "versions": [
       {
         "version": "latest",
-        "source": "https://ccmjs.github.io/mkaul-components/fine_upload/versions/ccm.fine_upload-1.0.0.js",
-        "minified":"https://ccmjs.github.io/mkaul-components/fine_upload/versions/ccm.fine_upload-1.0.0.min.js"
+        "source": "https://ccmjs.github.io/mkaul-components/fine_upload/versions/ccm.fine_upload-1.0.0.js"
       }
     ],
     "developer": "Manfred Kaul",
@@ -353,8 +347,7 @@ ccm.files[ "datasets.js" ] = {
     "versions": [
       {
         "version": "1.0.0",
-        "source": "https://ccmjs.github.io/tkless-components/forum/versions/ccm.forum-1.0.0.js",
-        "minified": "https://ccmjs.github.io/tkless-components/forum/versions/ccm.forum-1.0.0.min.js"
+        "source": "https://ccmjs.github.io/tkless-components/forum/versions/ccm.forum-1.0.0.js"
       }
     ],
     "developer": "Tea Kless",
@@ -380,13 +373,11 @@ ccm.files[ "datasets.js" ] = {
     "versions": [
       {
         "version": "1.0.0",
-        "source": "https://ccmjs.github.io/tkless-components/feedback/versions/ccm.feedback-1.0.0.js",
-        "minified": "https://ccmjs.github.io/tkless-components/feedback/versions/ccm.feedback-1.0.0.min.js"
+        "source": "https://ccmjs.github.io/tkless-components/feedback/versions/ccm.feedback-1.0.0.js"
       },
       {
         "version": "2.0.0",
-        "source": "https://ccmjs.github.io/tkless-components/feedback/versions/ccm.feedback-2.0.0.js",
-        "minified": "https://ccmjs.github.io/tkless-components/feedback/versions/ccm.feedback-2.0.0.min.js"
+        "source": "https://ccmjs.github.io/tkless-components/feedback/versions/ccm.feedback-2.0.0.js"
       }
     ],
     "developer": "Tea Kless",
@@ -420,8 +411,7 @@ ccm.files[ "datasets.js" ] = {
     "versions": [
       {
         "version": "latest",
-        "source": "https://ccmjs.github.io/akless-components/game_chooser/versions/ccm.game_chooser-1.0.0.js",
-        "minified": "https://ccmjs.github.io/mkaul-components/game_chooser/versions/ccm.game_chooser-1.0.0.min.js"
+        "source": "https://ccmjs.github.io/akless-components/game_chooser/versions/ccm.game_chooser-1.0.0.js"
       }
     ],
     "developer": "Manfred Kaul",
@@ -451,8 +441,7 @@ ccm.files[ "datasets.js" ] = {
     "versions": [
       {
         "version": "latest",
-        "source": "https://ccmjs.github.io/mkaul-components/geogebra/versions/ccm.geogebra-1.0.0.js",
-        "minified": "https://ccmjs.github.io/mkaul-components/geogebra/versions/ccm.geogebra-1.0.0.min.js"
+        "source": "https://ccmjs.github.io/mkaul-components/geogebra/versions/ccm.geogebra-1.0.0.js"
       }
     ],
     "developer": "Manfred Kaul",
@@ -503,8 +492,7 @@ ccm.files[ "datasets.js" ] = {
     "versions": [
       {
         "version": "1.0.0",
-        "source": "https://ccmjs.github.io/akless-components/input/versions/ccm.input-1.0.0.js",
-        "minified": "https://ccmjs.github.io/akless-components/input/versions/ccm.input-1.0.0.min.js"
+        "source": "https://ccmjs.github.io/akless-components/input/versions/ccm.input-1.0.0.js"
       }
     ],
     "developer": "André Kless",
@@ -537,13 +525,11 @@ ccm.files[ "datasets.js" ] = {
     "versions": [
       {
         "version": "1.1.0",
-        "source": "https://ccmjs.github.io/akless-components/kanban_board/versions/ccm.kanban_board-1.1.0.js",
-        "minified": "https://ccmjs.github.io/akless-components/kanban_board/versions/ccm.kanban_board-1.1.0.min.js"
+        "source": "https://ccmjs.github.io/akless-components/kanban_board/versions/ccm.kanban_board-1.1.0.js"
       },
       {
         "version": "1.0.0",
-        "source": "https://ccmjs.github.io/akless-components/kanban_board/versions/ccm.kanban_board-1.0.0.js",
-        "minified": "https://ccmjs.github.io/akless-components/kanban_board/versions/ccm.kanban_board-1.0.0.min.js"
+        "source": "https://ccmjs.github.io/akless-components/kanban_board/versions/ccm.kanban_board-1.0.0.js"
       }
     ],
     "developer": "André Kless",
@@ -578,8 +564,7 @@ ccm.files[ "datasets.js" ] = {
     "versions": [
       {
         "version": "1.0.0",
-        "source": "https://ccmjs.github.io/akless-components/kanban_card/versions/ccm.kanban_card-1.0.0.js",
-        "minified": "https://ccmjs.github.io/akless-components/kanban_card/versions/ccm.kanban_card-1.0.0.min.js"
+        "source": "https://ccmjs.github.io/akless-components/kanban_card/versions/ccm.kanban_card-1.0.0.js"
       }
     ],
     "developer": "André Kless",
@@ -609,13 +594,11 @@ ccm.files[ "datasets.js" ] = {
     "versions": [
       {
         "version": "2.0.0",
-        "source": "https://ccmjs.github.io/akless-components/le/versions/ccm.le-2.0.0.js",
-        "minified": "https://ccmjs.github.io/akless-components/le/versions/ccm.le-2.0.0.min.js"
+        "source": "https://ccmjs.github.io/akless-components/le/versions/ccm.le-2.0.0.js"
       },
       {
         "version": "1.0.0",
-        "source": "https://ccmjs.github.io/akless-components/le/versions/ccm.le-1.0.0.js",
-        "minified": "https://ccmjs.github.io/akless-components/le/versions/ccm.le-1.0.0.min.js"
+        "source": "https://ccmjs.github.io/akless-components/le/versions/ccm.le-1.0.0.js"
       }
     ],
     "developer": "André Kless",
@@ -649,8 +632,7 @@ ccm.files[ "datasets.js" ] = {
     "versions": [
       {
         "version": "latest",
-        "source": "https://ccmjs.github.io/mkaul-components/learning_app/versions/ccm.learning_app-1.0.0.js",
-        "minified": "https://ccmjs.github.io/mkaul-components/learning_app/versions/ccm.learning_app-1.0.0.min.js"
+        "source": "https://ccmjs.github.io/mkaul-components/learning_app/versions/ccm.learning_app-1.0.0.js"
       }
     ],
     "developer": "Manfred Kaul",
@@ -676,8 +658,7 @@ ccm.files[ "datasets.js" ] = {
     "versions": [
       {
         "version": "1.0.0",
-        "source": "https://ccmjs.github.io/akless-components/log/versions/ccm.log-1.0.0.js",
-        "minified": "https://ccmjs.github.io/akless-components/log/versions/ccm.log-1.0.0.min.js"
+        "source": "https://ccmjs.github.io/akless-components/log/versions/ccm.log-1.0.0.js"
       }
     ],
     "developer": "André Kless",
@@ -705,8 +686,7 @@ ccm.files[ "datasets.js" ] = {
     "versions": [
       {
         "version": "1.0.0",
-        "source": "https://ccmjs.github.io/tkless-components/news/versions/ccm.news-1.0.0.js",
-        "minified": "https://ccmjs.github.io/tkless-components/news/versions/ccm.news-1.0.0.min.js"
+        "source": "https://ccmjs.github.io/tkless-components/news/versions/ccm.news-1.0.0.js"
       }
     ],
     "developer": "Tea Kless",
@@ -735,8 +715,7 @@ ccm.files[ "datasets.js" ] = {
     "versions": [
       {
         "version": "1.0.0",
-        "source": "https://ccmjs.github.io/tkless-components/question/versions/ccm.question-1.0.0.js",
-        "minified": "https://ccmjs.github.io/tkless-components/question/versions/ccm.question-1.0.0.min.js"
+        "source": "https://ccmjs.github.io/tkless-components/question/versions/ccm.question-1.0.0.js"
       }
     ],
     "developer": "Tea Kless",
@@ -766,13 +745,11 @@ ccm.files[ "datasets.js" ] = {
     "versions": [
       {
         "version": "2.0.0",
-        "source": "https://ccmjs.github.io/akless-components/quiz/versions/ccm.quiz-2.0.0.js",
-        "minified": "https://ccmjs.github.io/akless-components/quiz/versions/ccm.quiz-2.0.0.min.js"
+        "source": "https://ccmjs.github.io/akless-components/quiz/versions/ccm.quiz-2.0.0.js"
       },
       {
         "version": "1.0.0",
-        "source": "https://ccmjs.github.io/akless-components/quiz/versions/ccm.quiz-1.0.0.js",
-        "minified": "https://ccmjs.github.io/akless-components/quiz/versions/ccm.quiz-1.0.0.min.js"
+        "source": "https://ccmjs.github.io/akless-components/quiz/versions/ccm.quiz-1.0.0.js"
       }
     ],
     "developer": "André Kless",
@@ -805,8 +782,7 @@ ccm.files[ "datasets.js" ] = {
     "versions": [
       {
         "version": "1.0.0",
-        "source": "https://ccmjs.github.io/tkless-components/star_rating/versions/ccm.star_rating-1.0.0.js",
-        "minified": "https://ccmjs.github.io/tkless-components/star_rating/versions/ccm.star_rating-1.0.0.min.js"
+        "source": "https://ccmjs.github.io/tkless-components/star_rating/versions/ccm.star_rating-1.0.0.js"
       }
     ],
     "developer": "Tea Kless",
@@ -835,8 +811,7 @@ ccm.files[ "datasets.js" ] = {
     "versions": [
       {
         "version": "1.0.0",
-        "source": "https://ccmjs.github.io/tkless-components/star_rating_result/versions/ccm.star_rating_result-1.0.0.js",
-        "minified": "https://ccmjs.github.io/tkless-components/star_rating_result/versions/ccm.star_rating_result-1.0.0.min.js"
+        "source": "https://ccmjs.github.io/tkless-components/star_rating_result/versions/ccm.star_rating_result-1.0.0.js"
       }
     ],
     "developer": "Tea Kless",
@@ -932,8 +907,7 @@ ccm.files[ "datasets.js" ] = {
     "versions": [
       {
         "version": "1.0.0",
-        "source": "https://ccmjs.github.io/akless-components/testsuite/versions/ccm.testsuite-1.0.0.js",
-        "minified": "https://ccmjs.github.io/akless-components/testsuite/versions/ccm.testsuite-1.0.0.min.js"
+        "source": "https://ccmjs.github.io/akless-components/testsuite/versions/ccm.testsuite-1.0.0.js"
       }
     ],
     "developer": "André Kless",
@@ -961,8 +935,7 @@ ccm.files[ "datasets.js" ] = {
     "versions": [
       {
         "version": "1.0.0",
-        "source": "https://ccmjs.github.io/tkless-components/thumb_rating/versions/ccm.thumb_rating-1.0.0.js",
-        "minified": "https://ccmjs.github.io/tkless-components/thumb_rating/versions/ccm.thumb_rating-1.0.0.min.js"
+        "source": "https://ccmjs.github.io/tkless-components/thumb_rating/versions/ccm.thumb_rating-1.0.0.js"
       }
     ],
     "developer": "Tea Kless",
@@ -988,8 +961,7 @@ ccm.files[ "datasets.js" ] = {
     "versions": [
       {
         "version": "1.0.0",
-        "source": "https://ccmjs.github.io/akless-components/user/versions/ccm.user-1.0.0.js",
-        "minified": "https://ccmjs.github.io/akless-components/user/versions/ccm.user-1.0.0.min.js"
+        "source": "https://ccmjs.github.io/akless-components/user/versions/ccm.user-1.0.0.js"
       }
     ],
     "developer": "André Kless",
@@ -1053,8 +1025,7 @@ ccm.files[ "datasets.js" ] = {
     "versions": [
       {
         "version": "latest",
-        "source": "https://ccmjs.github.io/mkaul-components/upload/versions/ccm.upload-1.0.0.js",
-        "minified": "https://ccmjs.github.io/mkaul-components/upload/versions/ccm.upload-1.0.0.min.js"
+        "source": "https://ccmjs.github.io/mkaul-components/upload/versions/ccm.upload-1.0.0.js"
       }
     ],
     "developer": "Manfred Kaul",
@@ -1083,8 +1054,7 @@ ccm.files[ "datasets.js" ] = {
     "versions": [
       {
         "version": "1.0.0",
-        "source": "https://ccmjs.github.io/tkless-components/voting/versions/ccm.voting-1.0.0.js",
-        "minified": "https://ccmjs.github.io/tkless-components/voting/versions/ccm.voting-1.0.0.min.js"
+        "source": "https://ccmjs.github.io/tkless-components/voting/versions/ccm.voting-1.0.0.js"
       }
     ],
     "developer": "Tea Kless",
