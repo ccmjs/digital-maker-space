@@ -77,7 +77,7 @@
             {
               "id": "footer",
               "inner": {
-                "inner": "Place for Publish, Create and Sharing of <a href='https://github.com/ccmjs'><i>ccm</i></a> Components and Modular Apps"
+                "inner": "Publish, Create and Share <a href='https://github.com/ccmjs'><i>ccm</i></a> Components and Modular Apps"
               }
             }
           ]
