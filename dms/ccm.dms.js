@@ -51,6 +51,12 @@
                       "onclick": "%browse_apps%"
                     },
                     {
+                      "id": "button-publish_app",
+                      "class": "button",
+                      "inner": "Publish App",
+                      "onclick": "%publish_app%"
+                    },
+                    {
                       "id": "button-all_components",
                       "class": "button",
                       "inner": "All Components",
@@ -430,7 +436,8 @@
         "data": { "store": [ "ccm.store" ] }
       } ],
       "comp_info": [ "ccm.component", "https://ccmjs.github.io/digital-maker-space/comp_info/ccm.comp_info.js" ],
-      "resource_finder": [ "ccm.instance", "https://ccmjs.github.io/leck-components/resource_finder/dist/ccm.resource_finder-0.1.0.js" ]
+      "resource_finder": [ "ccm.instance", "https://ccmjs.github.io/leck-components/resource_finder/dist/ccm.resource_finder-0.1.0.js" ],
+      "resource_publish": [ "ccm.instance", "https://ccmjs.github.io/leck-components/resource_publish/dist/ccm.resource_publish-0.1.0.js" ]
     },
 
     /**
@@ -470,6 +477,12 @@
       let resource_finder_started = false;
 
       /**
+       * Ensures that the resource publish is only started once
+       * @type {boolean}
+       */
+      let resource_publish_started = false;
+
+      /**
        * is called once after the initialization and is then deleted
        * @param {function} callback - called after all synchronous and asynchronous operations are complete
        */
@@ -505,6 +518,11 @@
               changeSelectedMenuEntry( this );
               window.location.hash = `dms-navigation=browseapps`;
               renderBrowseApps();
+            },
+            publish_app: function () {
+              changeSelectedMenuEntry( this );
+              window.location.hash = `dms-navigation=publishapp`;
+              renderPublishApp();
             },
             all_components: function () {
               changeSelectedMenuEntry( this );
@@ -555,6 +573,10 @@
                 changeSelectedMenuEntry( main_elem.querySelector('#button-browse_apps') );
                 renderBrowseApps();
                 break;
+              case 'publishapp':
+                changeSelectedMenuEntry( main_elem.querySelector('#button-publish_app') );
+                renderPublishApp();
+                break;
               case 'allcomponents':
                 changeSelectedMenuEntry( main_elem.querySelector('#button-all_components') );
                 renderAllComponents();
@@ -586,6 +608,25 @@
             }
 
             $.setContent( browse_apps_elem, self.resource_finder.root );
+
+          }
+
+          /** renders publish app */
+          function renderPublishApp() {
+            // view browse apps already active? => abort
+            if ( content_elem.querySelector( '#publish_app' ) ) return;
+
+            // clear content area
+            $.setContent( content_elem, $.html( { id: 'publish_app' } ) );
+
+            const publish_app_elem = content_elem.querySelector( '#publish_app' );
+            if (!resource_publish_started) {
+              self.resource_publish.start(() => {
+                resource_publish_started = true;
+              });
+            }
+
+            $.setContent( publish_app_elem, self.resource_publish.root );
 
           }
 
