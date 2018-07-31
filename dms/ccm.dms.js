@@ -47,7 +47,7 @@
                     {
                       "id": "button-browse_apps",
                       "class": "button",
-                      "inner": "Browse apps",
+                      "inner": "Browse Apps",
                       "onclick": "%browse_apps%"
                     },
                     {
