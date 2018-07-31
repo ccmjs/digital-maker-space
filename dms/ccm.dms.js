@@ -517,22 +517,18 @@
             browse_apps: function () {
               changeSelectedMenuEntry( this );
               window.location.hash = `dms-navigation=browseapps`;
-              renderBrowseApps();
             },
             publish_app: function () {
               changeSelectedMenuEntry( this );
               window.location.hash = `dms-navigation=publishapp`;
-              renderPublishApp();
             },
             all_components: function () {
               changeSelectedMenuEntry( this );
               window.location.hash = `dms-navigation=allcomponents`;
-              renderAllComponents();
             },
             publish: function () {
               changeSelectedMenuEntry( this );
               window.location.hash = `dms-navigation=publishcomponent`;
-              renderPublishForm();
             }
           } );
 
@@ -547,6 +543,22 @@
 
           // bring prepared own content into frontend
           $.setContent( self.element, main_elem );
+
+          window.addEventListener('hashchange', function() {
+            const urlHash = window.location.hash.substr(1);
+            const hashParameters = urlHash.split('&');
+            hashParameters.forEach(parameter => {
+              const key = parameter.split('=')[0];
+              const value = parameter.split('=')[1];
+              switch (key) {
+                case 'dms-navigation':
+                  navigateTo(value);
+                  break;
+                default:
+                //console.log(`Unknown URL parameter: ${key}`);
+              }
+            });
+          });
 
           let urlHash = window.location.hash.substr(1);
           if (urlHash !== '') {
@@ -564,7 +576,6 @@
             });
           } else {
             window.location.hash = `dms-navigation=allcomponents`;
-            navigateTo('allcomponents');
           }
 
           function navigateTo(target) {
