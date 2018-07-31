@@ -437,7 +437,7 @@
       } ],
       "comp_info": [ "ccm.component", "https://ccmjs.github.io/digital-maker-space/comp_info/ccm.comp_info.js" ],
       "resource_finder": [ "ccm.instance", "https://ccmjs.github.io/leck-components/resource_finder/dist/ccm.resource_finder-0.1.0.js" ],
-      "resource_publish": [ "ccm.instance", "https://ccmjs.github.io/leck-components/resource_publish/dist/ccm.resource_publish-0.2.0.js" ]
+      "resource_publish": [ "ccm.instance", "https://ccmjs.github.io/leck-components/resource_publish/dist/ccm.resource_publish-0.3.0.js" ]
     },
 
     /**
