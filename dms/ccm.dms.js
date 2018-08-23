@@ -25,7 +25,6 @@
      * @type {Object}
      */
     config: {
-
       "html": {
         "main": {
           "id": "main",
@@ -126,6 +125,7 @@
       "data": { "store": [ "ccm.store" ], "key": {} },
       "component_icon": "https://ccmjs.github.io/digital-maker-space/dms/resources/component.png",
       "message": "No published Components to display.",
+      "listing": [ "ccm.component", "https://ccmjs.github.io/akless-components/listing/versions/ccm.listing-1.0.0.js" ],
       "publish_form": [ "ccm.instance", "https://ccmjs.github.io/akless-components/submit/versions/ccm.submit-3.1.1.js", {
         "css": [ "ccm.load",
           "https://ccmjs.github.io/tkless-components/libs/bootstrap/css/bootstrap.css",
@@ -578,6 +578,8 @@
             window.location.hash = `dms-navigation=allcomponents`;
           }
 
+          callback && callback();
+
           function navigateTo(target) {
             switch (target) {
               case 'browseapps':
@@ -600,8 +602,6 @@
                 console.log(`Unknown navigation target: ${target}`);
             }
           }
-
-          callback && callback();
 
           /** renders browse apps */
           function renderBrowseApps() {
@@ -650,58 +650,71 @@
             // clear content area
             $.setContent( content_elem, $.html( { id: 'all_components' } ) );
 
-            // no published components? => render info message
-            if ( components.length === 0 ) return $.setContent( content_elem.querySelector( '#all_components' ), my.message );
-
-            // sort components by title and developer
-            components.sort( ( a, b ) => {
-              const title_x = a.title.toLowerCase();
-              const title_y = b.title.toLowerCase();
-              const developer_x = ( a.developer || '' ).toLowerCase();
-              const developer_y = ( b.developer || '' ).toLowerCase();
-              if ( title_x < title_y ) return -1;
-              if ( title_x > title_y ) return 1;
-              if ( developer_x < developer_y ) return -1;
-              if ( developer_x > developer_y ) return 1;
-              return 0;
-            } );
-
-            /**
-             * contains component entries
-             * @type {Element}
-             */
-            const all_components_elem = content_elem.querySelector( '#all_components' );
-
-            // iterate over component datasets
-            components.map( component => {
-
-              // prepare HTML structure of component entry
-              const entry_elem = $.html( my.html.entry, {
-                icon: my.component_icon,
-                title: component.title,
-                developer: component.developer,
-                click: () => {
-                  changeSelectedMenuEntry();
-                  my.comp_info.start( {
-                    data: {
-                      store: my.data.store,
-                      key: component.key
+            // render listing of all components
+            my.listing.start( {
+              root: content_elem.querySelector( '#all_components' ),
+              "html.entry": {
+                "class": "entry",
+                "inner": [
+                  {
+                    "class": "left",
+                    "inner": {
+                      "tag": "img",
+                      "src": "%icon%"
                     }
-                  }, instance => {
-                    $.setContent( content_elem, instance.root )
-                  } );
-                }
-              } );
-
-              // render component entry
-              all_components_elem.appendChild( entry_elem );
-
-              // render star rating results of component
-              my.rating_result.start( {
-                root: entry_elem.querySelector( '.rating' ),
-                'data.key': component.key
-              } );
-
+                  },
+                  {
+                    "class": "right",
+                    "inner": [
+                      {
+                        "class": "title",
+                        "inner": "%title%",
+                        "title": "%title%"
+                      },
+                      {
+                        "class": "developer",
+                        "inner": "%developer%",
+                        "title": "%developer%"
+                      },
+                      { "class": "rating" }
+                    ]
+                  }
+                ]
+              },
+              "css": [ "ccm.load", "https://ccmjs.github.io/digital-maker-space/dms/resources/listing.css" ],
+              "data": { "store": [ "ccm.store", "https://ccmjs.github.io/digital-maker-space/dms/resources/datasets.js" ], "key": {} },
+              "defaults": {
+                "icon": "https://ccmjs.github.io/digital-maker-space/dms/resources/component.png"
+              },
+              sort: ( a, b ) => {
+                const title_x = a.title.toLowerCase();
+                const title_y = b.title.toLowerCase();
+                const developer_x = ( a.developer || '' ).toLowerCase();
+                const developer_y = ( b.developer || '' ).toLowerCase();
+                if ( title_x < title_y ) return -1;
+                if ( title_x > title_y ) return 1;
+                if ( developer_x < developer_y ) return -1;
+                if ( developer_x > developer_y ) return 1;
+                return 0;
+              },
+              onrender: ( element, data ) => {
+                my.rating_result.start( {
+                  root: element.querySelector( '.rating' ),
+                  'data.key': data.key
+                } );
+              },
+              onclick: ( event, element, data ) => {
+                changeSelectedMenuEntry();
+                window.location.hash = ``;
+                my.comp_info.start( {
+                  data: {
+                    store: my.data.store,
+                    key: data.key
+                  }
+                }, instance => {
+                  $.setContent( content_elem, instance.root )
+                } );
+              }
             } );
 
           }
