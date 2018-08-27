@@ -777,7 +777,7 @@
                   if ( !window.confirm( 'Are you sure, you want to publish the Component?' ) ) return;
 
                   // publish component
-                  my.store.set( dataset, () => { alert( 'Saved!' ); self.start(); } );
+                  my.store.set( dataset, () => { alert( 'Saved!' ); navigateTo( 'allcomponents' ) } );
 
                 } );
 
