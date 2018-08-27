@@ -5,7 +5,7 @@
  */
 
 #main {
-  padding-top: 2em;
+  padding: 2em;
 }
 
 #button-submit {
@@ -39,9 +39,4 @@ label.required::before {
 
 a {
   padding-left: 0.3em;
-}
-
-input[type=submit] {
-  margin-top: 0.5em;
-  margin-bottom: 2em;
 }
