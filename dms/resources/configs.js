@@ -2,8 +2,9 @@ ccm.files[ 'configs.js' ] = {
 
   "local": {
     "css.3": "../dms/resources/default.css",
-    "store": [ "ccm.store", "../dms/resources/datasets.js" ],
+    "store":  [ "ccm.store", "../dms/resources/datasets.js" ],
     "logger": [ "ccm.instance", "https://ccmjs.github.io/akless-components/log/versions/ccm.log-3.1.0.js", [ "ccm.get", "https://ccmjs.github.io/akless-components/log/resources/configs.js", "greedy" ] ],
+    "user":   [ "ccm.component", "https://ccmjs.github.io/akless-components/user/versions/ccm.user-7.1.0.js" ],
 
     "data.store.1": "../dms/resources/datasets.js",
 //  "component_icon": "../dms/resources/component.png",

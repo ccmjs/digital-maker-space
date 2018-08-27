@@ -66,6 +66,13 @@
   background-color: #ddd;
 }
 
+#header #user {
+  padding: 0.8em;
+  border-left: 1px solid #bbb;
+  display: grid;
+  align-items: center;
+}
+
 #content {
   border-left: 1px solid #e7e7e7;
   border-right: 1px solid #e7e7e7;

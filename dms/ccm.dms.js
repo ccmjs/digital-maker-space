@@ -67,11 +67,7 @@
                       "inner": "Publish Component",
                       "onclick": "%publish%"
                     },
-                    {
-                      "id": "log_in",
-                      "class": "button",
-                      "inner": "Log In"
-                    }
+                    { "id": "user" }
                   ]
                 }
               ]
@@ -124,8 +120,9 @@
       ],
       "store": [ "ccm.store" ],
       "listing": [ "ccm.component", "https://ccmjs.github.io/akless-components/listing/versions/ccm.listing-1.0.0.js" ],
-      "form":    [ "ccm.component", "https://ccmjs.github.io/akless-components/submit/versions/ccm.submit-3.1.1.js" ],
-  //  "logger": [ "ccm.instance", "https://ccmjs.github.io/akless-components/log/versions/ccm.log-3.1.0.js", [ "ccm.get", "https://ccmjs.github.io/akless-components/log/resources/configs.js", "greedy" ] ],
+      "form":    [ "ccm.component", "https://ccmjs.github.io/akless-components/submit/versions/ccm.submit-3.1.1.js"   ],
+  //  "user":    [ "ccm.component", "https://ccmjs.github.io/akless-components/user/versions/ccm.user-7.1.0.js" ],
+  //  "logger":  [ "ccm.instance",  "https://ccmjs.github.io/akless-components/log/versions/ccm.log-3.1.0.js",   [ "ccm.get", "https://ccmjs.github.io/akless-components/log/resources/configs.js", "greedy" ] ],
 
   //  "message": "No published Components to display.",
   //  "component_icon": "https://ccmjs.github.io/digital-maker-space/dms/resources/component.png",
@@ -240,6 +237,20 @@
            * @type {Element}
            */
           const content_elem = main_elem.querySelector( '#content' );
+
+          if ( my.user ) my.user.start( {
+            root: main_elem.querySelector( '#user' ),
+            "html.logged_in.class": "",
+            "html.logged_out.class": "",
+            "css": [ "ccm.load",
+              "https://ccmjs.github.io/akless-components/libs/bootstrap/css/bootstrap.css",
+              { "context": "head", "url": "https://ccmjs.github.io/akless-components/libs/bootstrap/css/font-face.css" },
+              "https://ccmjs.github.io/akless-components/user/resources/default.css"
+            ],
+            "realm": "guest",
+            "title": "Guest Mode: Please enter any username",
+            "no_password": true,
+          } );
 
           // render all components
           renderAllComponents();
