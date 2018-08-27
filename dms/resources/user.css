@@ -1,0 +1,38 @@
+/**
+ * @overview layout for user authentication
+ * @author André Kless <andre.kless@web.de.de> 2018
+ * @license The MIT License (MIT)
+ */
+
+#logged_in {
+  display: flex;
+  align-items: flex-end;
+}
+
+#logged_in,
+#logged_out {
+  float: right;
+}
+
+#logged_in #button {
+  margin-left: 0.5em;
+}
+
+.glyphicon {
+  margin-right: 0.4em;
+}
+
+#login-form #loginbox {
+  margin-top: 50px;
+}
+#login-form .panel-body {
+  padding-top: 30px
+}
+
+#login-form .input-group {
+  margin-bottom: 25px;
+}
+
+#btn-abort {
+  float: right;
+}
