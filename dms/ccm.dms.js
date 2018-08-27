@@ -122,311 +122,14 @@
         { "context": "head", "url": "https://ccmjs.github.io/tkless-components/libs/bootstrap/css/font-face.css" },
         "https://ccmjs.github.io/digital-maker-space/dms/resources/default.css"
       ],
-      "data": { "store": [ "ccm.store" ], "key": {} },
-      "component_icon": "https://ccmjs.github.io/digital-maker-space/dms/resources/component.png",
-      "message": "No published Components to display.",
+      "store": [ "ccm.store" ],
       "listing": [ "ccm.component", "https://ccmjs.github.io/akless-components/listing/versions/ccm.listing-1.0.0.js" ],
-      "publish_form": [ "ccm.instance", "https://ccmjs.github.io/akless-components/submit/versions/ccm.submit-3.1.1.js", {
-        "css": [ "ccm.load",
-          "https://ccmjs.github.io/tkless-components/libs/bootstrap/css/bootstrap.css",
-          "https://ccmjs.github.io/digital-maker-space/dms/resources/submit.css"
-        ],
-        "inner": {
-          "id": "main",
-          "class": "container",
-          "inner": [
-            {
-              "id": "title",
-              "class": "form-group",
-              "inner": [
-                {
-                  "tag": "label",
-                  "id": "title-label",
-                  "for": "title-input",
-                  "class": "control-label required",
-                  "inner": "Title"
-                },
-                {
-                  "tag": "span",
-                  "id": "title-help",
-                  "class": "help",
-                  "inner": [
-                    {
-                      "tag": "a",
-                      "id": "title-icon",
-                      "inner": {
-                        "class": "glyphicon glyphicon-info-sign"
-                      }
-                    },
-                    {
-                      "id": "title-info",
-                      "class": "alert alert-info",
-                      "inner": "Specify the title of your component."
-                    }
-                  ]
-                },
-                {
-                  "tag": "input",
-                  "type": "text",
-                  "id": "title-input",
-                  "class": "form-control",
-                  "name": "title",
-                  "required": true
-                }
-              ]
-            },
-            {
-              "id": "url",
-              "class": "form-group",
-              "inner": [
-                {
-                  "tag": "label",
-                  "id": "url-label",
-                  "for": "url-input",
-                  "class": "control-label required",
-                  "inner": "URL"
-                },
-                {
-                  "tag": "span",
-                  "id": "url-help",
-                  "class": "help",
-                  "inner": [
-                    {
-                      "tag": "a",
-                      "id": "url-icon",
-                      "inner": {
-                        "class": "glyphicon glyphicon-info-sign"
-                      }
-                    },
-                    {
-                      "id": "url-info",
-                      "class": "alert alert-info",
-                      "inner": "Enter the URL to the component version file."
-                    }
-                  ]
-                },
-                {
-                  "tag": "input",
-                  "type": "url",
-                  "id": "url-input",
-                  "class": "form-control",
-                  "name": "url",
-                  "pattern": ".*/ccm\\.([a-z][a-z0-9_]*)(-(0|[1-9][0-9]*)\\.(0|[1-9][0-9]*)\\.(0|[1-9][0-9]*))(\\.js)$",
-                  "placeholder": "https://ccmjs.github.io/digital-maker-space/versions/ccm.dms-1.0.0.js",
-                  "title": "The filename of the component must start with 'ccm.' followed by the unique component name and then a '-' followed by the component version number and a '.js' in the end. Example: ccm.dms-1.0.0.js",
-                  "required": true
-                }
-              ]
-            },
-            {
-              "id": "abstract",
-              "class": "form-group",
-              "inner": [
-                {
-                  "tag": "label",
-                  "id": "abstract-label",
-                  "for": "abstract-input",
-                  "class": "control-label",
-                  "inner": "Abstract"
-                },
-                {
-                  "tag": "span",
-                  "id": "abstract-help",
-                  "class": "help",
-                  "inner": [
-                    {
-                      "tag": "a",
-                      "id": "abstract-icon",
-                      "inner": {
-                        "class": "glyphicon glyphicon-info-sign"
-                      }
-                    },
-                    {
-                      "id": "abstract-info",
-                      "class": "alert alert-info",
-                      "inner": "Enter a short component description."
-                    }
-                  ]
-                },
-                {
-                  "tag": "input",
-                  "type": "text",
-                  "id": "abstract-input",
-                  "class": "form-control",
-                  "name": "abstract"
-                }
-              ]
-            },
-            {
-              "id": "description",
-              "class": "form-group",
-              "inner": [
-                {
-                  "tag": "label",
-                  "id": "description-label",
-                  "for": "description-input",
-                  "class": "control-label",
-                  "inner": "Description"
-                },
-                {
-                  "tag": "span",
-                  "id": "description-help",
-                  "class": "help",
-                  "inner": [
-                    {
-                      "tag": "a",
-                      "id": "description-icon",
-                      "inner": {
-                        "class": "glyphicon glyphicon-info-sign"
-                      }
-                    },
-                    {
-                      "id": "description-info",
-                      "class": "alert alert-info",
-                      "inner": "Enter a long description of component."
-                    }
-                  ]
-                },
-                {
-                  "tag": "textarea",
-                  "id": "description-input",
-                  "class": "form-control",
-                  "name": "description"
-                }
-              ]
-            },
-            {
-              "id": "homepage",
-              "class": "form-group",
-              "inner": [
-                {
-                  "tag": "label",
-                  "id": "homepage-label",
-                  "for": "homepage-input",
-                  "class": "control-label",
-                  "inner": "Homepage"
-                },
-                {
-                  "tag": "span",
-                  "id": "homepage-help",
-                  "class": "help",
-                  "inner": [
-                    {
-                      "tag": "a",
-                      "id": "homepage-icon",
-                      "inner": {
-                        "class": "glyphicon glyphicon-info-sign"
-                      }
-                    },
-                    {
-                      "id": "homepage-info",
-                      "class": "alert alert-info",
-                      "inner": "Enter the homepage URL of the component."
-                    }
-                  ]
-                },
-                {
-                  "tag": "input",
-                  "type": "url",
-                  "id": "homepage-input",
-                  "class": "form-control",
-                  "name": "homepage",
-                  "placeholder": "https://github.com/ccmjs/digital-maker-space"
-                }
-              ]
-            },
-            {
-              "id": "developer",
-              "class": "form-group",
-              "inner": [
-                {
-                  "tag": "label",
-                  "id": "developer-label",
-                  "for": "developer-input",
-                  "class": "control-label",
-                  "inner": "Developer"
-                },
-                {
-                  "tag": "span",
-                  "id": "developer-help",
-                  "class": "help",
-                  "inner": [
-                    {
-                      "tag": "a",
-                      "id": "developer-icon",
-                      "inner": {
-                        "class": "glyphicon glyphicon-info-sign"
-                      }
-                    },
-                    {
-                      "id": "developer-info",
-                      "class": "alert alert-info",
-                      "inner": "Enter the name of the developer who developed the component."
-                    }
-                  ]
-                },
-                {
-                  "tag": "input",
-                  "type": "text",
-                  "id": "developer-input",
-                  "class": "form-control",
-                  "name": "developer"
-                }
-              ]
-            },
-            {
-              "id": "license",
-              "class": "form-group",
-              "inner": [
-                {
-                  "tag": "label",
-                  "id": "license-label",
-                  "for": "license-input",
-                  "class": "control-label required",
-                  "inner": "License"
-                },
-                {
-                  "tag": "span",
-                  "id": "license-help",
-                  "class": "help",
-                  "inner": [
-                    {
-                      "tag": "a",
-                      "id": "license-icon",
-                      "inner": {
-                        "class": "glyphicon glyphicon-info-sign"
-                      }
-                    },
-                    {
-                      "id": "license-info",
-                      "class": "alert alert-info",
-                      "inner": "Components can only be published as free software under MIT license."
-                    }
-                  ]
-                },
-                {
-                  "tag": "input",
-                  "type": "text",
-                  "id": "license-input",
-                  "class": "form-control",
-                  "name": "license",
-                  "value": "MIT License",
-                  "pattern": "MIT License",
-                  "disabled": true,
-                  "required": true
-                }
-              ]
-            },
-            {
-              "tag": "input",
-              "type": "submit",
-              "id": "button-submit",
-              "class": "btn btn-success btn-lg",
-              "value": "Publish Component"
-            }
-          ]
-        }
-      } ],
+      "form":    [ "ccm.component", "https://ccmjs.github.io/akless-components/submit/versions/ccm.submit-3.1.1.js" ],
+  //  "logger": [ "ccm.instance", "https://ccmjs.github.io/akless-components/log/versions/ccm.log-3.1.0.js", [ "ccm.get", "https://ccmjs.github.io/akless-components/log/resources/configs.js", "greedy" ] ],
+
+  //  "message": "No published Components to display.",
+  //  "component_icon": "https://ccmjs.github.io/digital-maker-space/dms/resources/component.png",
+      "data": { "store": [ "ccm.store" ], "key": {} },
       "rating_result": [ "ccm.component", "https://ccmjs.github.io/tkless-components/star_rating_result/versions/ccm.star_rating_result-1.0.0.js", {
         "css": [ "ccm.load",
           { "context": "head", "url": "https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" },
@@ -596,7 +299,7 @@
                 break;
               case 'publishcomponent':
                 changeSelectedMenuEntry( main_elem.querySelector('#button-publish') );
-                renderPublishForm();
+                renderPublishComponent();
                 break;
               default:
                 console.log(`Unknown navigation target: ${target}`);
@@ -641,10 +344,10 @@
 
           }
 
-          /** renders all components */
+          /** renders all components view */
           function renderAllComponents() {
 
-            // view with all components already active? => abort
+            // render all components view already active? => abort
             if ( content_elem.querySelector( '#all_components' ) ) return;
 
             // clear content area
@@ -682,7 +385,7 @@
                 ]
               },
               "css": [ "ccm.load", "https://ccmjs.github.io/digital-maker-space/dms/resources/listing.css" ],
-              "data": { "store": [ "ccm.store", "https://ccmjs.github.io/digital-maker-space/dms/resources/datasets.js" ], "key": {} },
+              "data": { "store": my.store, "key": {} },
               "defaults": {
                 "icon": "https://ccmjs.github.io/digital-maker-space/dms/resources/component.png"
               },
@@ -719,10 +422,10 @@
 
           }
 
-          /** renders publish form */
-          function renderPublishForm() {
+          /** renders publish component view */
+          function renderPublishComponent() {
 
-            // view with all components already active? => abort
+            // publish form view already active? => abort
             if ( content_elem.querySelector( '#publish_form' ) ) return;
 
             // clear content area
@@ -735,16 +438,314 @@
             const publish_form_elem = content_elem.querySelector( '#publish_form' );
 
             // start ccm instance for publish form
-            self.publish_form.start( () => {
-
-              // set 'onfinish' callback
-              self.publish_form.onfinish = ( instance, component_dataset ) => {
+            my.form.start( {
+              root: publish_form_elem,
+              "css": [ "ccm.load",
+                "https://ccmjs.github.io/akless-components/libs/bootstrap/css/bootstrap.css",
+                "https://ccmjs.github.io/digital-maker-space/dms/resources/submit.css"
+              ],
+              "inner": {
+                "id": "main",
+                "class": "container",
+                "inner": [
+                  {
+                    "id": "title",
+                    "class": "form-group",
+                    "inner": [
+                      {
+                        "tag": "label",
+                        "id": "title-label",
+                        "for": "title-input",
+                        "class": "control-label required",
+                        "inner": "Title"
+                      },
+                      {
+                        "tag": "span",
+                        "id": "title-help",
+                        "class": "help",
+                        "inner": [
+                          {
+                            "tag": "a",
+                            "id": "title-icon",
+                            "inner": {
+                              "class": "glyphicon glyphicon-info-sign"
+                            }
+                          },
+                          {
+                            "id": "title-info",
+                            "class": "alert alert-info",
+                            "inner": "Specify the title of your component."
+                          }
+                        ]
+                      },
+                      {
+                        "tag": "input",
+                        "type": "text",
+                        "id": "title-input",
+                        "class": "form-control",
+                        "name": "title",
+                        "required": true
+                      }
+                    ]
+                  },
+                  {
+                    "id": "url",
+                    "class": "form-group",
+                    "inner": [
+                      {
+                        "tag": "label",
+                        "id": "url-label",
+                        "for": "url-input",
+                        "class": "control-label required",
+                        "inner": "URL"
+                      },
+                      {
+                        "tag": "span",
+                        "id": "url-help",
+                        "class": "help",
+                        "inner": [
+                          {
+                            "tag": "a",
+                            "id": "url-icon",
+                            "inner": {
+                              "class": "glyphicon glyphicon-info-sign"
+                            }
+                          },
+                          {
+                            "id": "url-info",
+                            "class": "alert alert-info",
+                            "inner": "Enter the URL to the component version file."
+                          }
+                        ]
+                      },
+                      {
+                        "tag": "input",
+                        "type": "url",
+                        "id": "url-input",
+                        "class": "form-control",
+                        "name": "url",
+                        "pattern": ".*/ccm\\.([a-z][a-z0-9_]*)(-(0|[1-9][0-9]*)\\.(0|[1-9][0-9]*)\\.(0|[1-9][0-9]*))(\\.js)$",
+                        "placeholder": "https://ccmjs.github.io/digital-maker-space/versions/ccm.dms-1.0.0.js",
+                        "title": "The filename of the component must start with 'ccm.' followed by the unique component name and then a '-' followed by the component version number and a '.js' in the end. Example: ccm.dms-1.0.0.js",
+                        "required": true
+                      }
+                    ]
+                  },
+                  {
+                    "id": "abstract",
+                    "class": "form-group",
+                    "inner": [
+                      {
+                        "tag": "label",
+                        "id": "abstract-label",
+                        "for": "abstract-input",
+                        "class": "control-label",
+                        "inner": "Abstract"
+                      },
+                      {
+                        "tag": "span",
+                        "id": "abstract-help",
+                        "class": "help",
+                        "inner": [
+                          {
+                            "tag": "a",
+                            "id": "abstract-icon",
+                            "inner": {
+                              "class": "glyphicon glyphicon-info-sign"
+                            }
+                          },
+                          {
+                            "id": "abstract-info",
+                            "class": "alert alert-info",
+                            "inner": "Enter a short component description."
+                          }
+                        ]
+                      },
+                      {
+                        "tag": "input",
+                        "type": "text",
+                        "id": "abstract-input",
+                        "class": "form-control",
+                        "name": "abstract"
+                      }
+                    ]
+                  },
+                  {
+                    "id": "description",
+                    "class": "form-group",
+                    "inner": [
+                      {
+                        "tag": "label",
+                        "id": "description-label",
+                        "for": "description-input",
+                        "class": "control-label",
+                        "inner": "Description"
+                      },
+                      {
+                        "tag": "span",
+                        "id": "description-help",
+                        "class": "help",
+                        "inner": [
+                          {
+                            "tag": "a",
+                            "id": "description-icon",
+                            "inner": {
+                              "class": "glyphicon glyphicon-info-sign"
+                            }
+                          },
+                          {
+                            "id": "description-info",
+                            "class": "alert alert-info",
+                            "inner": "Enter a long description of component."
+                          }
+                        ]
+                      },
+                      {
+                        "tag": "textarea",
+                        "id": "description-input",
+                        "class": "form-control",
+                        "name": "description"
+                      }
+                    ]
+                  },
+                  {
+                    "id": "homepage",
+                    "class": "form-group",
+                    "inner": [
+                      {
+                        "tag": "label",
+                        "id": "homepage-label",
+                        "for": "homepage-input",
+                        "class": "control-label",
+                        "inner": "Homepage"
+                      },
+                      {
+                        "tag": "span",
+                        "id": "homepage-help",
+                        "class": "help",
+                        "inner": [
+                          {
+                            "tag": "a",
+                            "id": "homepage-icon",
+                            "inner": {
+                              "class": "glyphicon glyphicon-info-sign"
+                            }
+                          },
+                          {
+                            "id": "homepage-info",
+                            "class": "alert alert-info",
+                            "inner": "Enter the homepage URL of the component."
+                          }
+                        ]
+                      },
+                      {
+                        "tag": "input",
+                        "type": "url",
+                        "id": "homepage-input",
+                        "class": "form-control",
+                        "name": "homepage",
+                        "placeholder": "https://github.com/ccmjs/digital-maker-space"
+                      }
+                    ]
+                  },
+                  {
+                    "id": "developer",
+                    "class": "form-group",
+                    "inner": [
+                      {
+                        "tag": "label",
+                        "id": "developer-label",
+                        "for": "developer-input",
+                        "class": "control-label",
+                        "inner": "Developer"
+                      },
+                      {
+                        "tag": "span",
+                        "id": "developer-help",
+                        "class": "help",
+                        "inner": [
+                          {
+                            "tag": "a",
+                            "id": "developer-icon",
+                            "inner": {
+                              "class": "glyphicon glyphicon-info-sign"
+                            }
+                          },
+                          {
+                            "id": "developer-info",
+                            "class": "alert alert-info",
+                            "inner": "Enter the name of the developer who developed the component."
+                          }
+                        ]
+                      },
+                      {
+                        "tag": "input",
+                        "type": "text",
+                        "id": "developer-input",
+                        "class": "form-control",
+                        "name": "developer"
+                      }
+                    ]
+                  },
+                  {
+                    "id": "license",
+                    "class": "form-group",
+                    "inner": [
+                      {
+                        "tag": "label",
+                        "id": "license-label",
+                        "for": "license-input",
+                        "class": "control-label required",
+                        "inner": "License"
+                      },
+                      {
+                        "tag": "span",
+                        "id": "license-help",
+                        "class": "help",
+                        "inner": [
+                          {
+                            "tag": "a",
+                            "id": "license-icon",
+                            "inner": {
+                              "class": "glyphicon glyphicon-info-sign"
+                            }
+                          },
+                          {
+                            "id": "license-info",
+                            "class": "alert alert-info",
+                            "inner": "Components can only be published as free software under MIT license."
+                          }
+                        ]
+                      },
+                      {
+                        "tag": "input",
+                        "type": "text",
+                        "id": "license-input",
+                        "class": "form-control",
+                        "name": "license",
+                        "value": "MIT License",
+                        "pattern": "MIT License",
+                        "disabled": true,
+                        "required": true
+                      }
+                    ]
+                  },
+                  {
+                    "tag": "input",
+                    "type": "submit",
+                    "id": "button-submit",
+                    "class": "btn btn-success btn-lg",
+                    "value": "Publish Component"
+                  }
+                ]
+              },
+              onfinish: ( instance, dataset ) => {
 
                 /**
                  * component version number
                  * @type {string[]}
                  */
-                const version = $.getIndex( component_dataset.url ).split( '-' );
+                const version = $.getIndex( dataset.url ).split( '-' );
 
                 /**
                  * unique component name
@@ -752,34 +753,31 @@
                  */
                 const name = version.shift();
 
-                // add name and version number in component dataset
-                component_dataset.key = name;
-                component_dataset.version = version;
-                component_dataset.license = 'MIT License';
+                // add component name and version number
+                dataset.key     = name;
+                dataset.version = version;
+                dataset.license = 'MIT License';  // components can only be published as free software
 
-                // check if unique component name already exists
-                my.data.store.get( name, dataset => {
-                  if ( dataset ) return alert( 'Component with unique name "' + name + '" already exists.' );
+                // check if component name already exists
+                my.store.get( name, existing => {
+                  if ( existing ) return alert( 'Component with unique name "' + name + '" already exists.' );
 
                   // make sure that the developer really wants to publish
                   if ( !window.confirm( 'Are you sure, you want to publish the Component?' ) ) return;
 
-                  // save component dataset
-                  my.data.store.set( component_dataset, () => { alert( 'Saved!' ); self.start(); } );
+                  // publish component
+                  my.store.set( dataset, () => { alert( 'Saved!' ); self.start(); } );
 
                 } );
 
-              };
-
-              // put publish form into frontend
-              $.setContent( publish_form_elem, self.publish_form.root );
+              }
+            }, instance => {
 
               // set click events for help icons
-              [ ...self.publish_form.element.querySelectorAll( '.help' ) ].map( help => help.addEventListener( 'click', function () {
+              [ ...instance.element.querySelectorAll( '.help' ) ].map( help => help.addEventListener( 'click', function () {
 
                 // show help text and hide other help texts
-                const this_a = this;
-                [ ...self.publish_form.element.querySelectorAll( '.help' ) ].map( other_a => other_a !== this_a && other_a.classList.remove( 'active' ) );
+                [ ...instance.element.querySelectorAll( '.help' ) ].map( help => help !== this && help.classList.remove( 'active' ) );
                 this.classList.toggle( 'active' );
 
                 // has logger instance? => log 'help' event
