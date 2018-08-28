@@ -9,8 +9,8 @@ ccm.files[ 'configs.js' ] = {
     "data.store.1": "../dms/resources/datasets.js",
 //  "component_icon": "../dms/resources/component.png",
 //  "form.2.css.2": "../dms/resources/submit.css",
-    "rating_result.2.css.3": "../dms/resources/rating_result.css"
-//  "comp_info": [ "ccm.component", "../comp_info/ccm.comp_info.js", [ "ccm.get", "../comp_info/resources/configs.js", "local" ] ]
+    "rating_result.2.css.3": "../dms/resources/rating_result.css",
+    "comp_info": [ "ccm.component", "../comp_info/ccm.comp_info.js", [ "ccm.get", "../comp_info/resources/configs.js", "local" ] ]
   },
 
   "localhost": {
