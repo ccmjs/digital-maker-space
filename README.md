@@ -1,3 +1,5 @@
+_This is just a rudimentary description of the possibilities that will be expanded. Later, of course, also in English._
+
 # Digital Maker Space (DMS)
 Die Idee eines Maker Space ist es Menschen freien Zugang zu modernen Technologien und Werkzeugen zu ermöglichen. Ein Bespiel wäre eine Halle mit 3D-Druckern, zu der jeder Bürger freien Zugang hat und diese nutzen kann.
 
