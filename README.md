@@ -1,12 +1,19 @@
 _This is just a rudimentary description of the possibilities that will be expanded. Later, of course, also in English._
 
 # Digital Maker Space (DMS)
-Die Idee eines Maker Space ist es Menschen freien Zugang zu modernen Technologien und Werkzeugen zu ermöglichen. Ein Bespiel wäre eine Halle mit 3D-Druckern, zu der jeder Bürger freien Zugang hat und diese nutzen kann.
-
-Ein _Digital Maker Space_ überträgt dieses Prinzip ins digitale. Über ihn werden digitale Werkzeuge, sogenannte Webkomponenten, für jeden Menschen frei zur Verfügung gestellt. Aus einer solchen Webkomponente können dann über Weboberflächen ohne Programmierkenntnisse Apps erstellt werden, die dann wie ein Legostein in beliebige Webseiten eingebracht werden können. Über eine Webkomponente für Quiz können Sie also beispielsweise ihren eigenen Quiz erstellen und diesen dann in Ihre Webseite einbetten. Probieren Sie es aus: Wählen Sie in der "All Components"-Ansicht des DMS die Komponente "Quiz". Im Menü unter "Demo" können Sie sich einen Beispiel-Quiz anschauen und unter dem Menüpunkt "Create App" einen eigenen Quiz erstellen. Klicken Sie anschließend ganz unten auf "Create" um den erstellten Quiz zu speichern und einen HTML-Einbettungscode zu erhalten, mit dem Sie, ähnlich wie bei einem YouTube-Video, den Quiz in eine beliebige Webseite einbetten können.
+Die Idee eines Maker Space ist es Menschen freien Zugang zu modernen Technologien und Werkzeugen zu ermöglichen. Ein Bespiel wäre eine Halle mit 3D-Druckern, zu der jeder Bürger freien Zugang hat und diese nutzen kann. Ein _Digital Maker Space_ überträgt dieses Prinzip ins Digitale. Über ihn werden digitale Werkzeuge, sogenannte Webkomponenten, für jeden Menschen frei zur Verfügung gestellt. Aus einer solchen Webkomponente können dann über Weboberflächen ohne Programmierkenntnisse Apps erstellt werden, die dann wie ein Legostein in beliebige Webseiten eingebracht werden können. Über eine Webkomponente für Quiz kann also beispielsweise ein Quiz erstellt und in beliebige Webseiten per HTML-Einbettungscode (ähnlich wie bei einem YouTube-Video) einbettet werden.
 
 Siehe auch hier:
 [Projektantrag zum Digital Maker Space](https://www.stifterverband.org/file/5203/download?token=lay3iM9c)
 
-## Technologischer Hintergrund
-Eine Webkomponente im DMS ist eine kleine JavaScript-Datei, die unter einer freien Lizenz (MIT Lizenz) im Web unter einer öffentlichen URL von einem Webentwickler bereitgestellt wurde. Unter einer Webkomponente verstehen wir im Kontext des DMS genaugenommen eine _ccm_-Komponente, also eine Webkomponente die auf Basis der sogenannten _ccm_-Technologie realisiert ist.
+## Erweiterung des Webs
+Jede freie Webkomponente erweitert die Funktionalität des Webs als Ganzes. Gibt es also eine Quiz-Komponente, kann das Web nun Quiz. Man ist also nicht mehr darauf angewiesen das eine bestimmte Plattform bzw. Unternehmen eine Quiz-Funktionalität bereitstellt.
+
+## Lego-Prinzip
+Die Webkomponenten basieren auf der sogenannten _ccm_-Technologie, die im Gegensatz zu bisherigen Komponententechnologien unter Anderem einen weitaus weitreichenderen Grad an Flexibilität und Anpassbarkeit erlaubt. Webkomponenten können dadurch wie Lego-Steine zu komplexen Webanwendungen zusammengesetzt werden können.
+
+## Plattformübergreifende Echtzeitkollaboration
+Über Webkomponenten können Menschen plattformübergreifend in Echtzeit miteinander kollaborieren. Angenommen ein über eine Webkomponente erstellter Chat wird in zwei verschiedene Lernplattformen, eine einfache Webseite und eine mobile Web-App eingebettet, dann können darüber, unabhängig davon von welchem virtuellen Ort aus ein Nutzer den Chat verwendet, plattformübergreifend Nachrichten ausgetauscht werden.
+
+## Webkomponente
+Das Prinzip einer Webkomponente ist simpel: Eine Webkomponente bekommt einen Bereich einer Webseite zugewiesen, den Sie anschließend gestaltet. Hierfür bekommt sie initiale Daten, die Konfiguration. Bei einem Quiz beinhalten diese Daten neben vielen anderen Anpassungsmöglichkeiten unter Anderem die Angaben, welche Fragen und Antworten konkret dargestellt werden sollen und welche Antworten zu einer Frage korrekt sind. Darüber hinaus enthält die Konfiguration die grundsätzlich austauschbaren Abhängigkeiten zu anderen Ressourcen wie Layout (CSS) und Datenspeichern. Die Webkomponente löst diese Abhängigkeiten dann zur Laufzeit auf und erzeugt aus der gegebenen Konfiguration die App, die in dem zugewiesenen Webseitenbereich dargestellt wird. Wo die bei der Verwendung einer App ggf. anfallenden Daten (bei einem Chat zum Beispiel der Chatverlauf) gespeichert werden, ist ebenfalls frei einstellbar. Um dies zu ermöglichen bietet die _ccm_-Technologie einen besonderen Service für die Datenhaltung an.
