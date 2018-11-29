@@ -6,7 +6,7 @@ Die Idee eines Maker Space ist, Menschen freien Zugang zu modernen Technologien 
 (Ausführliche Beschreibung unter: [Projektantrag zum Digital Maker Space](https://www.stifterverband.org/file/5203/download?token=lay3iM9c))
 
 ## Individualisierte Eingabemasken
-Im DMS werden zu einer konkreten Webkomponente oft verschiedene Eingabemasken für die Erstellung einer App angeboten. Es gibt also nicht, wie sonst üblich, nur die eine Eingabemaske, die für alle Anwender gleichermaßen passen muss.
+Im DMS werden zu einer konkreten Webkomponente oft verschiedene Eingabemasken für die Erstellung einer App angeboten. Es gibt also nicht, wie sonst üblich, nur die eine Eingabemaske, die für alle Nutzer gleichermaßen passen muss.
 
 ## Wettbewerbsprinzip
 Jeder kann im DMS eine Webkomponente bewerten und auch veröffentlichen. So kann es beispielsweise mehrere verschiedene Quiz-Komponenten geben, die dann gewissermaßen im Wettbewerb stehen, welche am meisten genutzt bzw. am besten bewertet wird.
