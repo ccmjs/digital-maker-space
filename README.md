@@ -10,7 +10,7 @@ Siehe auch hier:
 Jede freie Webkomponente erweitert die Funktionalität des Webs als Ganzes. Gibt es also eine Quiz-Komponente, kann das Web nun Quiz. Man ist also nicht mehr darauf angewiesen das eine bestimmte Plattform bzw. Unternehmen eine Quiz-Funktionalität bereitstellt.
 
 ## Lego-Prinzip
-Die Webkomponenten basieren auf der sogenannten _ccm_-Technologie, die im Gegensatz zu bisherigen Komponententechnologien unter Anderem einen weitaus weitreichenderen Grad an Flexibilität und Anpassbarkeit erlaubt. Webkomponenten können dadurch wie Lego-Steine zu komplexen Webanwendungen zusammengesetzt werden können.
+Die Webkomponenten basieren auf der sogenannten _ccm_-Technologie, die im Gegensatz zu bisherigen Komponententechnologien unter Anderem einen weitaus weitreichenderen Grad an Flexibilität und Anpassbarkeit erlaubt. Webkomponenten können dadurch wie Lego-Steine zu komplexen Webanwendungen zusammengesetzt werden.
 
 ## Plattformübergreifende Echtzeitkollaboration
 Über Webkomponenten können Menschen plattformübergreifend in Echtzeit miteinander kollaborieren. Angenommen ein über eine Webkomponente erstellter Chat wird in zwei verschiedene Lernplattformen, eine einfache Webseite und eine mobile Web-App eingebettet, dann können darüber, unabhängig davon von welchem virtuellen Ort aus ein Nutzer den Chat verwendet, plattformübergreifend Nachrichten ausgetauscht werden.
