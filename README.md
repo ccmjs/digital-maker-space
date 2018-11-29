@@ -30,4 +30,4 @@ Das Prinzip einer Webkomponente ist simpel: Eine Webkomponente bekommt einen Ber
 Eine Webkomponente ist nichts anderes als eine kleine Javascript-Datei, deren Dateiname immer mit `ccm.` beginnt (z.B. `ccm.quiz.js`). Ist diese einmal in eine Webseite eingebunden, existiert sofort auch automatisch ein zugehöriger HTML-Tag, dessen Name immer mit `ccm-` beginnt (z.B. `<ccm-quiz>`). Eine Webkomponente ist nicht an einen festen Ort im Web gebunden. Jeder ist frei sie herunterzuladen und woanders wieder zu veröffentlichen. Bei freien Webkomponenten muss keinerlei Urheberrecht beachtet werden, da sie unter einer freien Lizenz (in aller Regel der MIT-Lizenz) gestellt sind.
 
 ## Versionierung
-Webkomponenten unterstützen Versionierung. Es können in einer Webseite beispielsweise konfliktfrei mehrere Apps einbegettet werden, die auf verschiedenen Versionen der selben Webkomponente basieren.
+Webkomponenten unterstützen Versionierung. Es können in einer Webseite beispielsweise konfliktfrei mehrere Apps eingebettet werden, die auf verschiedenen Versionen der selben Webkomponente basieren.
