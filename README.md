@@ -26,7 +26,9 @@ The web components are based on _ccm_ technology, which, among other things, all
 
 ### Basic Principle
 The principle of a web component is simple: A web component is assigned a web page area, which it then designs. For this, the component gets initial data, the configuration. In the case of the quiz component, these data include, among other things, the information as to which questions and answers should be presented concretely and which answers of a question are correct.
+
 In addition, the configuration contains interchangeable dependencies to other resources such as layout (CSS) and datastores. The dependencies are resolved at runtime. The web component and the given configuration will then result in the app being displayed in the assigned web page area.
+
 The use of an app usually creates data. For example, in a chat, the chat history. Over the configuration of a web component is always freely adjustable, where the resulting data is stored and managed. To make this possible, the _ccm_ technology offers a special service for data management.
 
 ### What exactly is a Web Component?
