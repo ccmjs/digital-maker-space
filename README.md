@@ -8,7 +8,7 @@ The idea of a Maker Space is to give people free access to modern technologies a
 (detailed description under: [Project Application for the Digital Maker Space [german]](https://www.stifterverband.org/file/5203/download?token=lay3iM9c))
 
 ### Individualized Input Masks
-The DMS often offers various input masks for the creation of an app for a specific web component. So there is not, as usual, only the one input mask that has to fit equally for all users.
+The DMS offers various input masks for the creation of an app for a specific web component. So there is not, as usual, only the one input mask that has to fit equally for all users.
 
 ### Principle of Competition
 Everyone can evaluate and publish a web component in the DMS. For example, there may be several different quiz components, which are then in a sense in competition. Which is the most used or best rated?
