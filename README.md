@@ -3,15 +3,15 @@ _German description below._
 # English Description
 
 ## Digital Maker Space (DMS)
-The idea of a Maker Space is to give people free access to modern technologies and tools. An example is a hall with 3D printers, to which every citizen has free access. A Digital Maker Space transfers this principle into digital. Through him, digital tools, so-called web components, are made freely available to everyone. With a web component apps can be created via web interfaces without programming knowledge, which can then be inserted like a Lego stone in any web pages. For example, a quiz web component can be used to create a quiz and embed it into any web page using an HTML embed code (similar to a YouTube video).
+The idea of a Maker Space is to give people free access to modern technologies and tools. An example is a hall with 3D printers, to which every citizen has free access. A Digital Maker Space (DMS) transfers this principle into the digital realm. In the DMS digital tools, so-called web components, are made freely available to everyone. With web components the web is converted from passive to active.Everyone can create apps easily via web interfaces even without programming knowledge, because for every app there is a companion builder app to build similar apps. The apps can be inserted into in other apps and into any web page like Lego stones. For example, a quiz web component introduces the quiz facility into the web and can be used to create newquizzes, which can be  embedded into any web page using an HTML embed code (similar to a YouTube video). Compared to the Youtube player, which is a player for videos only, a quiz player is added to the web as well. The DMS provides any kind of web component player and their appropriate builder apps.
 
 (detailed description under: [Project Application for the Digital Maker Space [german]](https://www.stifterverband.org/file/5203/download?token=lay3iM9c))
 
 ### Individualized Input Masks
-The DMS offers various input masks for the creation of an app for a specific web component. So there is not, as usual, only the one input mask that has to fit equally for all users.
+For every web component there are one or more builder apps for creating new apps. That means, the DMS offers various input masks for the creation of new apps for a specific web component. So there is not, as usual, only the one input mask that has to fit equally for all users.
 
 ### Principle of Competition
-Everyone can evaluate and publish a web component in the DMS. For example, there may be several different quiz components, which are then in a sense in competition. Which is the most used or best rated?
+The DMS is a kind of market place for web components. Everyone can evaluate and publish new web components in the DMS. For example, there may be several different quiz components, which are in competition in a sense: Which is the most used or best rated?
 
 ## Web Components
 
