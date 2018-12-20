@@ -3,30 +3,48 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>App</title>
+<div id="helper"></div>
 <div id="app"></div>
 <script src="https://ccmjs.github.io/ccm/versions/ccm-18.6.6.min.js"></script>
 <script>
-  (async function(){
     const div = document.getElementById('app');
+    const helper_div = document.getElementById('helper');
+
     if (window.location.hash.length > 0) {
-      const [ comp, id ] = window.location.hash.slice(1).split('+');
-      const $ = window.ccm.helper;
-      const data = await ccm.get({ "name": "components", "url": "https://ccm2.inf.h-brs.de" }, {});
-      const DMS = {};
-      for ( const record of data ){
-        // with version number
-        DMS[ $.getIndex( record.url ) ] = record.url;
-        // without version number
-        DMS[ record.key ] = record.url;
-      }
-
-      const config = await ccm.get({ name: comp, url: "https://ccm2.inf.h-brs.de" }, id );
-
-      ccm.start( DMS[comp], $.integrate( {root: div}, config ));
-
+      insert_component();
     } else {
-      div.innerHTML = '<h1>Uniform Resource Locator for Apps</h1>Please enter correct URL, e.g. <a target="_blank" href="https://ccmjs.github.io/digital-maker-space/app/#quiz+1545287715309X5839053500614442" rel="noopener"> https://ccmjs.github.io/digital-maker-space/app/#quiz+1545287715309X5839053500614442 </a>';
+      helper_div.innerHTML = `
+          <h1>Uniform Resource Locator for Apps</h1>
+          <p>Please enter correct URL, e.g. <a target="_blank" href="https://ccmjs.github.io/digital-maker-space/app/#quiz+1545287715309X5839053500614442" rel="noopener"> https://ccmjs.github.io/digital-maker-space/app/#quiz+1545287715309X5839053500614442 </a></p>
+          <label>Name of component: <input id="comp" type="text" name="comp"></label>
+          <br><label>ID of app in <a target="_blank" href="https://ccmjs.github.io/digital-maker-space/" rel="noopener">DMS</a>:<input id="id" type="text" name="id"></label>
+          <br><input id="submit" type="submit">
+      `;
+      const submit = document.getElementById('submit');
+      const comp = document.getElementById('comp');
+      const id = document.getElementById('id');
+      submit.addEventListener('click', event => {
+        location.hash = comp.value + '+' + id.value;
+        helper_div.style.display = 'none';
+        insert_component();
+      });
     }
-  })();
+
+    async function insert_component(){
+        const [ comp, id ] = window.location.hash.slice(1).split('+');
+        const $ = window.ccm.helper;
+        const data = await window.ccm.get({ "name": "components", "url": "https://ccm2.inf.h-brs.de" }, {});
+        const DMS = {};
+        for ( const record of data ){
+          // with version number
+          DMS[ $.getIndex( record.url ) ] = record.url;
+          // without version number
+          DMS[ record.key ] = record.url;
+        }
+
+        const config = await window.ccm.get({ name: comp, url: "https://ccm2.inf.h-brs.de" }, id );
+
+        window.ccm.start( DMS[comp], $.integrate( {root: div}, config ));
+    }
 </script>
 
