@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="de">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>App</title>
+<div id="app"></div>
+<script src="https://ccmjs.github.io/ccm/versions/ccm-18.6.6.min.js"></script>
+<script>
+  (async function(){
+    const div = document.getElementById('app');
+    if (window.location.hash.length > 0) {
+      const [ comp, id ] = window.location.hash.slice(1).split('+');
+      const $ = window.ccm.helper;
+      const data = await ccm.get({ "name": "components", "url": "https://ccm2.inf.h-brs.de" }, {});
+      const DMS = {};
+      for ( const record of data ){
+        // with version number
+        DMS[ $.getIndex( record.url ) ] = record.url;
+        // without version number
+        DMS[ record.key ] = record.url;
+      }
+
+      const config = await ccm.get({ name: comp, url: "https://ccm2.inf.h-brs.de" }, id );
+
+      ccm.start( DMS[comp], $.integrate( {root: div}, config ));
+
+    } else {
+      div.innerHTML = 'Please enter correct URL, e.g. https://kaul.inf.h-brs.de/data/app#quiz+1545287715309X5839053500614442';
+    }
+  })();
+</script>
+
