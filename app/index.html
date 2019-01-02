@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="de">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>App</title>
+<div id="helper"></div>
+<div id="app"></div>
+<script src="https://ccmjs.github.io/ccm/versions/ccm-18.6.6.min.js"></script>
+<script>
+    const server = 'https://ccmjs.github.io/digital-maker-space/app';
+    const div = document.getElementById('app');
+    const helper_div = document.getElementById('helper');
+
+    if (window.location.hash.length > 0) {
+      insertComponent();
+    } else {
+      insertHelper('Please enter');
+    }
+
+    async function insertComponent(){
+      if ( window.location.hash.indexOf('+') >= 0 ){
+        const [ comp, id ] = window.location.hash.slice(1).split('+');
+        const $ = window.ccm.helper;
+        const data = await window.ccm.get({ "name": "components", "url": "https://ccm2.inf.h-brs.de" }, {});
+        const DMS = {};
+        for ( const record of data ){
+          // with version number
+          DMS[ $.getIndex( record.url ) ] = record.url;
+          // without version number
+          DMS[ record.key ] = record.url;
+        }
+
+        if ( DMS[comp] ){
+          const config = await window.ccm.get({ name: comp, url: "https://ccm2.inf.h-brs.de" }, id );
+
+          if ( config ){
+            window.ccm.start( DMS[comp], $.integrate( {root: div}, config ));
+          } else {
+            insertHelper('Wrong ID');
+          }
+        } else {
+          insertHelper('Wrong component name');
+        }
+      } else {
+        insertHelper('Insert + between component name and DMS ID');
+      }
+
+    }
+
+    function insertHelper( startPhrase ){
+      helper_div.innerHTML = `
+          <h1>${startPhrase}: Uniform Resource Locator for Apps</h1>
+          <p>Please enter correct URL with + sign between component name and ID, e.g. <a target="_blank" href="${server}/#quiz+1545287715309X5839053500614442" rel="noopener"> ${server}/#quiz+1545287715309X5839053500614442 </a></p>
+          <label>Name of component: <input id="comp" type="text" name="comp"></label>
+          <br><label>ID of app in <a target="_blank" href="https://ccmjs.github.io/digital-maker-space/" rel="noopener">DMS</a>:<input id="id" type="text" name="id"></label>
+          <br><input id="submit" type="submit">
+      `;
+      const submit = document.getElementById('submit');
+      const comp = document.getElementById('comp');
+      const id = document.getElementById('id');
+      submit.addEventListener('click', event => {
+        location.hash = comp.value + '+' + id.value;
+        helper_div.style.display = 'none';
+        insertComponent();
+      });
+    }
+</script>
+
