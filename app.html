@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>App</title>
+<style>* { height: 100%; } body { margin: 0; }</style>
+<script src="https://ccmjs.github.io/ccm/versions/ccm-20.0.0.js"></script>
+<body>
+<script>
+
+  renderApp().then();
+
+  /** renders a ccm-based app inside <body> */
+  async function renderApp() {
+
+    let component = '', store = {}, key = '';
+
+    // filter parameter from window.location.hash
+    window.location.hash.substr( 1 ).split( '&' ).forEach( part => {
+      const arr = part.split( '=' );
+      switch ( arr[ 0 ] ) {
+        case 'component':
+          component = arr[ 1 ];
+          break;
+        case 'name':
+        case 'url':
+          store[ arr[ 0 ] ] = arr[ 1 ];
+          break;
+        case 'key':
+          key = arr[ 1 ];
+          break;
+      }
+    } );
+
+    // no ccm component URL? => abort
+    if ( !component ) return console.log( 'missing ccm component URL' );
+
+    /**
+     * ccm instance configuration of the ccm-based app that has to be rendered
+     * @type {Object}
+     */
+    const config = store.name || store.url || key ? await window.ccm.get( store, key ) : {};
+
+    // ccm-based app is rendered directly in <body>
+    config.root = document.body;
+
+    // start ccm-based app
+    await window.ccm.start( component, config );
+
+  }
+</script>
