@@ -48,7 +48,7 @@
      * ccm instance configuration of the ccm-based app that has to be rendered
      * @type {Object}
      */
-    const config = store.name || store.url || key ? await window.ccm.get( store, key ) : {};
+    const config = store.name && store.url && key ? await window.ccm.get( store, key ) : {};
 
     // ccm-based app is rendered directly in <body>
     config.root = document.body;
