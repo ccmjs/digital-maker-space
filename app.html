@@ -34,10 +34,7 @@
     } );
 
     // backwards compatibility
-    if ( data.store && data.key ) {
-      data.config.store = data.store;
-      data.config.key = data.key;
-    }
+    if ( data.name && data.url && data.key ) data.config = { store: { name: data.name, url: data.url }, key: data.key };
 
     // app configuration comes from a datastore? => use data dependency
     if ( data.config.store && data.config.key ) data.config = await window.ccm.get( data.config.store, data.config.key );
