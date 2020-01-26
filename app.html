@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="author" content="André Kless <andre.kless@web.de> 2019">
+<meta name="author" content="André Kless <andre.kless@web.de> 2019-2020">
 <meta name="apple-mobile-web-app-title" content="App">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="mobile-web-app-capable" content="yes">
@@ -13,49 +13,41 @@
 
 <title>App</title>
 <style>* { height: 100%; } body { margin: 0; }</style>
-<script src="https://ccmjs.github.io/ccm/versions/ccm-22.6.1.js"></script>
+<script src="https://ccmjs.github.io/ccm/versions/ccm-25.0.0.js"></script>
 <body>
 <script>
 
-  renderApp().then();
-
-  /** renders a ccm-based app inside <body> */
-  async function renderApp() {
-
-    let component = '', store = {}, key = '';
-
-    // filter parameter from window.location.hash
-    window.location.hash.substr( 1 ).split( '&' ).forEach( part => {
-      const arr = part.split( '=' );
-      switch ( arr[ 0 ] ) {
-        case 'component':
-          component = arr[ 1 ];
-          break;
-        case 'name':
-        case 'url':
-          store[ arr[ 0 ] ] = arr[ 1 ];
-          break;
-        case 'key':
-          key = arr[ 1 ];
-          break;
-      }
-    } );
-
-    // no ccm component URL? => abort
-    if ( !component ) return console.log( 'missing ccm component URL' );
+  ( async () => {
 
     /**
-     * ccm instance configuration of the ccm-based app that has to be rendered
+     * received data from window.location.hash
      * @type {Object}
      */
-    const config = store.name && store.url && key ? await window.ccm.get( store, key ) : {};
+    const data = {};
+
+    // filter data from window.location.hash
+    window.location.hash.substr( 1 ).split( '&' ).forEach( part => {
+      part = part.split( '=' );
+      let value = decodeURIComponent( part[ 1 ] );
+      if ( window.ccm.helper.regex( 'json' ).test( value ) ) value = window.ccm.helper.parse( value );
+      data[ part[ 0 ] ] = value;
+    } );
+
+    // backwards compatibility
+    if ( data.store && data.key ) {
+      data.config.store = data.store;
+      data.config.key = data.key;
+    }
+
+    // app configuration comes from a datastore? => use data dependency
+    if ( data.config.store && data.config.key ) data.config = await window.ccm.get( data.config.store, data.config.key );
 
     // ccm-based app is rendered directly in <body>
-    config.root = document.body;
+    data.config.root = document.body;
 
     // start ccm-based app
-    await window.ccm.start( component, config );
+    await window.ccm.start( data.component, data.config );
 
-  }
+  } )();
 
 </script>
