@@ -26,10 +26,11 @@
     const data = {};
 
     // filter data from window.location.hash
-    window.location.hash.substr( 1 ).split( '&' ).forEach( part => {
+    let hash = window.location.hash;
+    try { hash = decodeURIComponent( hash ); } catch ( e ) {}
+    hash.substr( 1 ).split( '&' ).forEach( part => {
       part = part.split( '=' );
-      let value;
-      try { value = decodeURIComponent( part[ 1 ] ); } catch ( e ) {}
+      let value = part[ 1 ];
       if ( window.ccm.helper.regex( 'json' ).test( value ) ) value = window.ccm.helper.parse( value );
       data[ part[ 0 ] ] = value;
     } );
