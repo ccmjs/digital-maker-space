@@ -29,7 +29,7 @@
     let hash = window.location.hash;
     try { hash = decodeURIComponent( hash ); } catch ( e ) {}
     hash.substr( 1 ).split( '&' ).forEach( part => {
-      part = part.split( '=' );
+      part = part.split( /=(.+)/ );
       let value = part[ 1 ];
       if ( window.ccm.helper.regex( 'json' ).test( value ) ) value = window.ccm.helper.parse( value );
       data[ part[ 0 ] ] = value;
